@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3>
-                                <a href="<?php echo base_url(); ?>index.php/userCont/emailcampaign">
+                                <a href="<?php echo base_url(); ?>index.php/userCont/addcampaign">
                                 <button type="button" class="btn btn-status btn-primary">New Email Campaign</button>Email
                                 </a>
                             </h3>
