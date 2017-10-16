@@ -23,22 +23,13 @@ class userCont extends CI_Controller {
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
             $this->load->view('dashboardView', $data);
-
-<<<<<<< HEAD
-		public function dashboardview() {
-                       
-                $this->load->model('Getter');
-                $data['dashboard_content'] = $this->Getter->get_dash_content();                 
-                $this->load->view('dashboardView', $data);
-		
-        }       
        
+        }
 
-        public function emailform(){
+        function emailform(){
             $this->load->view('sequenceform');
         }
-=======
-        }
+        
 
         public function emailcampaign() {
 
@@ -48,19 +39,11 @@ class userCont extends CI_Controller {
 
         }
 
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
         public function smscampaign(){
             $this->load->view('newsmscampaignView');
         }
 
-<<<<<<< HEAD
-
-        public function smsform(){
-            $this->load->view('sequenceform');
-        }
-=======
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
         public function toggle() {
 
@@ -81,7 +64,6 @@ class userCont extends CI_Controller {
                 redirect('userCont/dashboardview');
 
         }
-<<<<<<< HEAD
         
         // this is for add newcampaign to database
         public function addCampaign(){
@@ -117,40 +99,12 @@ class userCont extends CI_Controller {
 
 
         public function sequenceform(){                        
-=======
-
-
-
-
-
-
-
-        public function campaignregist(){
-            $newcampaign = [
-                'campaign_name' =>$this->input->post('campaign_name'),
-                'sequence_qty'=>$this->input->post('sequence_qty'),
-                'label_name' =>$this->input->post('label_name'),
-                'status' =>$this->input->post('status'),
-                'type' =>$this->input->post('type'),
-                'created_at'=>date('Y-m-d')
-            ];
-            $this->db->insert('campaigns', $newcampaign);
-
-            $this->load->view('newemailcampaignView','refresh');
-        }
-
-
-        public function sequenceform(){
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
                         $this->load->view('sequenceform', 'refresh');
         }
 
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
-<<<<<<< HEAD
-                            
-=======
 
 
 		function edit(){
@@ -177,6 +131,5 @@ class userCont extends CI_Controller {
 
         $this->load->view('editEmailCampaign','refresh');
         }
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
 }

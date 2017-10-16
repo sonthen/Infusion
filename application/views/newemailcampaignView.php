@@ -36,11 +36,7 @@
                         </div> -->
                         <div class="form-group">    
                             <label for="campaign_name">Input Campaign Title </label>
-<<<<<<< HEAD
-                            <input type="text" class="form-control" name="campaign_name" >
-=======
                             <input type="text" class="form-control" name="campaign_name" id="campaign_name">
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
                         </div>
 
                         <div class="form-group">
@@ -51,38 +47,15 @@
                         <div class="form-group">
                             <label for="label_id">Choose Category</label>
 
-<<<<<<< HEAD
-                            <select class="form-control"  name="label_id">
-=======
-                            <select class="form-control"  name="label_name" id="label_name">
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
+                            <select class="form-control"  name="label_id" id="label_id">
                                 <?php foreach( $label_content as $e) { echo
                                     "<option value='$e->id;'>".$e->label_name."</option>";
                                 } ?>
                             </select>
 
-<<<<<<< HEAD
                         <div class="text-right">
                             <button class="btn btn-primary" name="addCampaign">next</button></a>
                         </div><hr>             
-=======
-                            <select name="category_id">
-                                <?php foreach ($cats as $category) { ?>
-                                    <option <?php if($category->category_id == "your desired id"){ echo 'selected="selected"'; } ?> value="<?php echo $category->category_id ?>"><?php echo $category->category?> </option>
-                                <?php } ?>
-                            </select>
-
-                        </div>
-
-                        <div class="text-right">
-                        <a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
-                            <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
-                        </div><hr>    
-
-                        <div class="text-center">
-                            <button class="btn btn-primary" name="register">Register</button>
-                        </div>         
->>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
                     </form>
 
                     <?php echo form_close();?>
