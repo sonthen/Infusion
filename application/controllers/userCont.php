@@ -30,45 +30,20 @@ class userCont extends CI_Controller {
                 $data['dashboard_content'] = $this->Getter->get_dash_content();                 
                 $this->load->view('dashboardView', $data);
 		
-        }
-
-        public function emailcampaign() {
-            
-            $this->load->model('Getter');
-            $data['label_content'] = $this->Getter->get_label();                 
-            $this->load->view('newemailcampaignView', $data);
-
-        }
-        
+        }       
        
 
         public function emailform(){
-            $this->load->view('emailformView');
+            $this->load->view('sequenceform');
         }
 
         public function smscampaign(){
             $this->load->view('newsmscampaignView');
         }
 
-        //test function
-        public function addCampaign(){    
-            
-            $newCampaign = [ 
-            'campaign_name' => $this->input->post('campaign_name'),
-            'sequence_qty' => $this->input->post('sequence_qty'),
-            'label_id' => $this->input->post('label_id'),
-            'type' => $this->input->post('1'),
-            'status' => $this->input->post('0'),
-            ];
-                    
-            $this->db->insert('campaigns',$newCampaign);
-
-            redirect('userCont/dashboardview', 'refresh');
-            
-        }
 
         public function smsform(){
-            $this->load->view('smsformView');
+            $this->load->view('sequenceform');
         }
 
         public function toggle() {
@@ -95,33 +70,37 @@ class userCont extends CI_Controller {
         public function newemailcampaign(){
                          $this->load->view('newemailcampaignView', 'refresh');
         }
-
-
-
         
-        
-        public function campaignregist(){
-            //this for validation
-          //   if (isset($_POST['campaignregist'])){
-          //     $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique');
-          //     $this->form_validation->set_rules('sequence_qty', 'sequence qty', 'required');
-          //     $this->form_validation->set_rules('label_id', 'label id', 'required');
-              
+        // this is for add newcampaign to database
+        public function addCampaign(){
 
-          //     if ($this->form_validation->run() == TRUE){
-          //                 echo 'form validated';
+            if (isset($_POST['addCampaign'])){
+            $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
+            $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
+            $this->form_validation->set_rules('label_id', 'label id', 'required');
+
+            			//if form validation true
+			if ($this->form_validation->run() == TRUE){
+            
               $newcampaign = [
-                  'campaign_name' =>$this->input->post('campaign_name'),
-                  'sequence_qty'=>$this->input->post('sequence_qty'),
-                  'label_name' =>$this->input->post('label_name'),
-                  'status' =>$this->input->post('status'),
-                  'type' =>$this->input->post('type'),
-                   'created_at'=>date('Y-m-d')
+                  'campaign_name' =>$_POST['campaign_name'],
+                  'sequence_qty'=>$_POST['sequence_qty'],
+                  'label_id' =>$_POST['label_id'],
+                    'created_at'=>date('Y-m-d')
               ];
-              $this->db->insert('campaigns', $newcampaign);
-      //     }
-      // }
-          $this->load->view('newemailcampaignView','refresh');
+              
+                $this->db->insert('campaigns', $newcampaign);
+                redirect('userCont/emailform','refresh');
+                
+           }
+           
+        }       
+           
+        //for load data categoryat view
+        $this->load->model('Getter');
+        $data['label_content'] = $this->Getter->get_label();                 
+        $this->load->view('newemailcampaignView', $data);     
+
       }
 
 
@@ -132,32 +111,6 @@ class userCont extends CI_Controller {
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
-                               
-        
-
-                
-                
-              
-
-        function edit(){
-            //maka dia akan print nama functionnya
-            // echo $this->uri->segment(2);
-            $this->load->model('model_barang');
-            $kode_barang = $this->uri->segment(3);
-            $data['barang'] = $this->model_barang->getBarang($kode_barang)->row_array();
-            // $this->load->view('edit_barang',$data); lari ke view editor
-        }
-    
-        function edit_data(){
-            $id = $this->input->post('id');
-            $newData = ['kode_barang' => $this->input->post('kode_barang'),
-                        'nama_barang' => $this->input->post('nama_barang'),
-                        'price' => $this->input->post('price')
-        ];
-        $this->db->where('kode_barang',$id);
-        $this->db->update('barang',$newData);
-    
-        redirect('barang');
-        }
+                            
 
 }

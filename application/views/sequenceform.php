@@ -13,7 +13,7 @@
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
-  <div class="container-fluid"><a href="<?php echo base_url(); ?>index.php/userCont/emailcampaign">
+  <div class="container-fluid"><a href="<?php echo base_url(); ?>index.php/userCont/addCampaign">
     <button type="button" href="<?php echo base_url(); ?>index.php/authCont/logout" class="btn btn-default navbar-btn">Back</button></a>
 <div class="row">
     <div class="col-md-12">
