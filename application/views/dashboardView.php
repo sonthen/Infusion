@@ -68,23 +68,24 @@
                                     <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                                     <button type='button' class='btn btn-status btn-xs btn-success'> on</button>
                                     </a>
-                                    
+
                                     <button type="button" class="btn btn-status btn-xs btn-danger" disabled>off</button>
-                             
+
                                 <?php } else { ?>
                                     <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
                                     <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                                     <button type='button' class='btn btn-status btn-xs btn-danger'>off</button>
                                     </a>
                                 <?php } ?>
-                                
+
                             </h3>
                             <p class="campaign-title"><?php echo $e->label_name ?></p>
-                            <button type="button" class="btn btn-warning">Edit Campaign</button>
+                              <a href="<?php echo base_url('index.php/usercont/edit/'.$e->id); ?>">
+                            <button type="button" class="btn btn-warning">Edit Campaign</button></a>
                         </div>
                         <?php } ?>
                         <!-- akhir if -->
-                    <?php } ?>                        
+                    <?php } ?>
                 </div>
             </div>
 
@@ -104,16 +105,16 @@
                                         <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                                         <button type='button' class='btn btn-status btn-xs btn-success'> on</button>
                                         </a>
-                                        
+
                                         <button type="button" class="btn btn-status btn-xs btn-danger" disabled>off</button>
-                                 
+
                                     <?php } else { ?>
                                         <button type="button" class="btn btn-status btn-xs btn-success" disabled>on</button>
                                         <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                                         <button type='button' class='btn btn-status btn-xs btn-danger'>off</button>
                                         </a>
                                     <?php } ?>
-                                    
+
                                 </h3>
                                 <p class="campaign-title"><?php echo $e->label_name ?></p>
                                 <?php echo "<button type='button' class='btn btn-warning'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'Edit Campaign')."</button>"; ?>
@@ -121,11 +122,11 @@
                             </div>
                             <?php } ?>
                             <!-- akhir if -->
-                        <?php } ?>                        
+                        <?php } ?>
                     </div>
                 </div>
 
-                
+
 
 
 

@@ -13,17 +13,18 @@ class userCont extends CI_Controller {
         }
     }
 
-    //for get userpage after user login
-        public function userpage(){
-
+    //to get dashboard after user login
+		public function dashboardview() {
             if ($_SESSION['user_logged'] == FALSE){
                 $this->session->set_flashdata("error", "Please login first to view this page!! ");
                 redirect("authCont/login");
-        }
-                $this->load->view('dashboardView', 'refresh');
+            }
 
-        }
+            $this->load->model('Getter');
+            $data['dashboard_content'] = $this->Getter->get_dash_content();
+            $this->load->view('dashboardView', $data);
 
+<<<<<<< HEAD
 		public function dashboardview() {
                        
                 $this->load->model('Getter');
@@ -36,23 +37,38 @@ class userCont extends CI_Controller {
         public function emailform(){
             $this->load->view('sequenceform');
         }
+=======
+        }
+
+        public function emailcampaign() {
+
+            $this->load->model('Getter');
+            $data['label_content'] = $this->Getter->get_label();
+            $this->load->view('newemailcampaignView', $data);
+
+        }
+
+>>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
         public function smscampaign(){
             $this->load->view('newsmscampaignView');
         }
 
+<<<<<<< HEAD
 
         public function smsform(){
             $this->load->view('sequenceform');
         }
+=======
+>>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
         public function toggle() {
-            
+
                 $this->load->model('Getter');
 
                 $id= $this->uri->segment(3);
                 $status= $this->uri->segment(4);
-                $data['dashboard_content'] = $this->Getter->get_campaign($id); 
+                $data['dashboard_content'] = $this->Getter->get_campaign($id);
 
                 if($status==0){
                     $newStat = ['status' => 1];
@@ -63,13 +79,9 @@ class userCont extends CI_Controller {
                 $this->db->where('id',$id);
                 $this->db->update('campaigns',$newStat);
                 redirect('userCont/dashboardview');
-		
-        }
 
-        // campaign form here!!---------------
-        public function newemailcampaign(){
-                         $this->load->view('newemailcampaignView', 'refresh');
         }
+<<<<<<< HEAD
         
         // this is for add newcampaign to database
         public function addCampaign(){
@@ -105,12 +117,66 @@ class userCont extends CI_Controller {
 
 
         public function sequenceform(){                        
+=======
+
+
+
+
+
+
+
+        public function campaignregist(){
+            $newcampaign = [
+                'campaign_name' =>$this->input->post('campaign_name'),
+                'sequence_qty'=>$this->input->post('sequence_qty'),
+                'label_name' =>$this->input->post('label_name'),
+                'status' =>$this->input->post('status'),
+                'type' =>$this->input->post('type'),
+                'created_at'=>date('Y-m-d')
+            ];
+            $this->db->insert('campaigns', $newcampaign);
+
+            $this->load->view('newemailcampaignView','refresh');
+        }
+
+
+        public function sequenceform(){
+>>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
                         $this->load->view('sequenceform', 'refresh');
         }
 
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
+<<<<<<< HEAD
                             
+=======
+
+
+		function edit(){
+	        //maka dia akan print nama functionnya
+	        // echo $this->uri->segment(2);
+	        $this->load->model('Getter');
+	        $id = $this->uri->segment(3);
+
+            $data['campaign'] = $this->Getter->edit_campaign($id);
+            $data['label'] = $this->Getter->get_label();
+	        $this->load->view('editEmailCampaign',$data);
+
+	    }
+
+        function edit_data(){
+            $id = $this->input->post('id');
+						$newcampaign = [
+								'campaign_name' =>$this->input->post('campaign_name'),
+								'sequence_qty'=>$this->input->post('sequence_qty'),
+								'label_name' =>$this->input->post('label_name'),
+						];
+        $this->db->where('id',$id);
+        $this->db->update('campaign',$newcampaign);
+
+        $this->load->view('editEmailCampaign','refresh');
+        }
+>>>>>>> f443041435d20773ce8b0746a651a8f17b1e3719
 
 }
