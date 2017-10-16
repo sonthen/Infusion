@@ -117,8 +117,8 @@
 
                                 </h3>
                                 <p class="campaign-title"><?php echo $e->label_name ?></p>
-                                <?php echo "<button type='button' class='btn btn-warning'>".anchor('usercont/toggle/'.$e->id.'/'.$e->status,'Edit Campaign')."</button>"; ?>
-                                <!-- <button type="button" class="btn btn-warning">Edit Campaign</button> -->
+                                <a href="<?php echo base_url('index.php/usercont/edit/'.$e->id); ?>">
+                                <button type="button" class="btn btn-warning">Edit Campaign</button></a>
                             </div>
                             <?php } ?>
                             <!-- akhir if -->
