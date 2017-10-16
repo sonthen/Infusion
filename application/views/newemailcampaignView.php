@@ -17,7 +17,7 @@
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
-<?php echo form_open('userCont/campaignregist'); ?>
+<?php echo form_open('userCont/addCampaign'); ?>
 
 
   <div class="container-fluid">
@@ -25,8 +25,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="berborder" >
-                    <?php echo form_open('barang/insert_data'); ?>
 
+
+        <!-- alert for handle empty form -->
+        <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
                     <form action="" method="POST">
                         <!-- <div class="form-group">
                             <label for="username" >Username : </label>
@@ -45,28 +47,15 @@
                         <div class="form-group">
                             <label for="label_id">Choose Category</label>
 
-                            <select class="form-control"  name="label_name" id="label_name">
+                            <select class="form-control"  name="label_id" id="label_id">
                                 <?php foreach( $label_content as $e) { echo
                                     "<option value='$e->id;'>".$e->label_name."</option>";
                                 } ?>
                             </select>
 
-                            <select name="category_id">
-                                <?php foreach ($cats as $category) { ?>
-                                    <option <?php if($category->category_id == "your desired id"){ echo 'selected="selected"'; } ?> value="<?php echo $category->category_id ?>"><?php echo $category->category?> </option>
-                                <?php } ?>
-                            </select>
-
-                        </div>
-
                         <div class="text-right">
-                        <a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
-                            <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
-                        </div><hr>    
-
-                        <div class="text-center">
-                            <button class="btn btn-primary" name="register">Register</button>
-                        </div>         
+                            <button class="btn btn-primary" name="addCampaign">next</button></a>
+                        </div><hr>             
                     </form>
 
                     <?php echo form_close();?>
