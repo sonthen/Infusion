@@ -95,7 +95,8 @@ class userCont extends CI_Controller {
 	        // echo $this->uri->segment(2);
 	        $this->load->model('Getter');
 	        $id = $this->uri->segment(3);
-	        $data['campaign'] = $this->Getter->edit_campaign($id)->row_array();
+            $data['campaign'] = $this->Getter->edit_campaign($id);
+            $data['label'] = $this->Getter->get_label();
 	        $this->load->view('editEmailCampaign',$data);
 
 	    }
