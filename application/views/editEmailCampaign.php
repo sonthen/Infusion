@@ -44,15 +44,6 @@ form_hidden('id', $this->uri->segment(3));
 
                         <div class="form-group">
                             <label >Choose Category</label>
-
-                            <select class="form-control"  name="label_id">
-                            <?php foreach( $label as $e) { ?>
-                                <!-- "<option value='$e->id;'>".$e->label_name."</option>"; -->
-                                <option selected="<?php echo $campaign[0]['label_name'] ?>" value="<?php echo $e->id ?>"><?php echo $e->label_name ?></option>
-                            <?php } ?>
-
-                            </select>
-
                             <select class="form-control"  name="label_id">
                                 <?php foreach( $label as $e) { ?>
                                     <!-- "<option value='$e->id;'>".$e->label_name."</option>"; -->
@@ -60,14 +51,7 @@ form_hidden('id', $this->uri->segment(3));
                                 <?php } ?>
 
                             </select>
-
-
-
-
                         </div>
-
-
-
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data">
                             <button type="button" class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>next</button></a>
