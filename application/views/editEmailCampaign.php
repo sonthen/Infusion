@@ -46,12 +46,17 @@ form_hidden('id', $this->uri->segment(3));
                             <label >Choose Category</label>
 
                             <select class="form-control"  name="label_id">
-                              <?php foreach( $campaign as $e) { ?>
+                              <?php foreach( $label as $e) { ?>
                                   <!-- "<option value='$e->id;'>".$e->label_name."</option>"; -->
-                                  <option <?php if($e->label_id == $e->label_id){ echo $e=label_name; } ?>value="<?php echo $e->label_id ?>"><?php echo $e->label_name?>
+                                  <option <?php if($e->id == $campaign["id"]){ echo 'selected="e->label_name"';} ?>value="<?php echo $e->label_id ?>"><?php echo $e->label_id?>
                             <?php } ?>
 
                             </select>
+
+
+
+
+                  </select>
 
 
 

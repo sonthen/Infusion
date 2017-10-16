@@ -40,4 +40,6 @@ class Getter extends CI_Model{
           return $this->db->get_where('campaigns',['id' => $id]);
 
     }
+
+    
 }
