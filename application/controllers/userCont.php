@@ -107,12 +107,10 @@ class userCont extends CI_Controller {
 						$newcampaign = [
 								'campaign_name' =>$this->input->post('campaign_name'),
 								'sequence_qty'=>$this->input->post('sequence_qty'),
-								'label_name' =>$this->input->post('label_name'),
+								'label_id' =>$this->input->post('label_id'),
 						];
         $this->db->where('id',$id);
-        $this->db->update('campaign',$newcampaign);
-
-        $this->load->view('editEmailCampaign','refresh');
+        $this->db->update('campaigns',$newcampaign);
         }
 
 }

@@ -17,7 +17,7 @@ class Getter extends CI_Model{
 
     function get_campaign($id)
     {
-        return $this->db->get_where('campaign',['id' => $id]);
+        return $this->db->get_where('campaigns',['id' => $id]);
     }
 
 
@@ -32,7 +32,7 @@ class Getter extends CI_Model{
     }
 
     function edit_campaign($id) {
-        
+
         $query = $this->db->query("SELECT c.id, c.sequence_qty, c.campaign_name, l.label_name
         FROM `campaigns` c
         LEFT JOIN labels l ON c.label_id = l.id
@@ -44,5 +44,5 @@ class Getter extends CI_Model{
 
     }
 
-    
+
 }
