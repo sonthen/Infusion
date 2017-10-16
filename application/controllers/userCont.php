@@ -27,9 +27,9 @@ class userCont extends CI_Controller {
         }
 
         public function emailcampaign() {
-            
+
             $this->load->model('Getter');
-            $data['label_content'] = $this->Getter->get_label();                 
+            $data['label_content'] = $this->Getter->get_label();
             $this->load->view('newemailcampaignView', $data);
 
         }
@@ -41,12 +41,12 @@ class userCont extends CI_Controller {
 
 
         public function toggle() {
-            
+
                 $this->load->model('Getter');
 
                 $id= $this->uri->segment(3);
                 $status= $this->uri->segment(4);
-                $data['dashboard_content'] = $this->Getter->get_campaign($id); 
+                $data['dashboard_content'] = $this->Getter->get_campaign($id);
 
                 if($status==0){
                     $newStat = ['status' => 1];
@@ -57,15 +57,15 @@ class userCont extends CI_Controller {
                 $this->db->where('id',$id);
                 $this->db->update('campaigns',$newStat);
                 redirect('userCont/dashboardview');
-		
+
         }
 
        
 
 
 
-        
-        
+
+
         public function campaignregist(){
             $newcampaign = [
                 'campaign_name' =>$this->input->post('campaign_name'),
@@ -81,33 +81,36 @@ class userCont extends CI_Controller {
         }
 
 
-        public function sequenceform(){                        
+        public function sequenceform(){
                         $this->load->view('sequenceform', 'refresh');
         }
 
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
-      
-        function edit(){
-            //maka dia akan print nama functionnya
-            // echo $this->uri->segment(2);
-            $this->load->model('model_barang');
-            $kode_barang = $this->uri->segment(3);
-            $data['barang'] = $this->model_barang->getBarang($kode_barang)->row_array();
-            // $this->load->view('edit_barang',$data); lari ke view editor
-        }
-    
+
+
+		function edit(){
+	        //maka dia akan print nama functionnya
+	        // echo $this->uri->segment(2);
+	        $this->load->model('Getter');
+	        $id = $this->uri->segment(3);
+	        $data['campaign'] = $this->Getter->edit_campaign($id)->row_array();
+	        $this->load->view('editEmailCampaign',$data);
+
+	    }
+
         function edit_data(){
             $id = $this->input->post('id');
-            $newData = ['kode_barang' => $this->input->post('kode_barang'),
-                        'nama_barang' => $this->input->post('nama_barang'),
-                        'price' => $this->input->post('price')
-        ];
-        $this->db->where('kode_barang',$id);
-        $this->db->update('barang',$newData);
-    
-        redirect('barang');
+						$newcampaign = [
+								'campaign_name' =>$this->input->post('campaign_name'),
+								'sequence_qty'=>$this->input->post('sequence_qty'),
+								'label_name' =>$this->input->post('label_name'),
+						];
+        $this->db->where('id',$id);
+        $this->db->update('campaign',$newcampaign);
+
+        $this->load->view('editEmailCampaign','refresh');
         }
 
 }

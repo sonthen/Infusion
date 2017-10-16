@@ -16,24 +16,28 @@ class Getter extends CI_Model{
 
 
     function get_campaign($id)
-    {        
+    {
         function getCampaign($id){
             return $this->db->get_where('campaign',['id' => $id]);
         }
-   
+
     }
 
 
     function get_label()
-    {        
+    {
         $query = $this->db->query("SELECT id, label_name
         FROM `labels`"
         );
 
         return $query->result();
-   
+
+    }
+
+    function edit_campaign($id) {
+
+
+          return $this->db->get_where('campaigns',['id' => $id]);
+
     }
 }
-
-
-
