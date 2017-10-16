@@ -33,38 +33,25 @@ form_hidden('id', $this->uri->segment(3));
                         <div class="form-group">
                             <label >Input Campaign Title </label>
 
-                            <?php echo form_input('campaign_name', $campaign["campaign_name"], ["name" =>"campaign_name","type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
+                            <?php echo form_input('campaign_name', $campaign[0]["campaign_name"], ["type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
                         </div>
 
                         <div class="form-group">
                             <label >Sequence qty </label>
-                              <?php echo form_input('sequence_qty', $campaign["sequence_qty"], ['placeholder'=>'sequence_qty',"name" =>"sequence_qty", "class" => "form-control","type" => "text"]); ?>
+                              <?php echo form_input('sequence_qty', $campaign[0]["sequence_qty"], ['placeholder'=>'sequence_qty',"name" =>"sequence_qty", "class" => "form-control","type" => "text"]); ?>
                             <!-- <input type="text" class="form-control" name="sequence_qty" > -->
                         </div>
 
                         <div class="form-group">
                             <label >Choose Category</label>
-
                             <select class="form-control"  name="label_id">
-                              <?php foreach( $label as $e) { ?>
-                                  <!-- "<option value='$e->id;'>".$e->label_name."</option>"; -->
-                                  <option <?php if($e->id == $campaign["id"]){ echo 'selected="e->label_name"';} ?>value="<?php echo $e->label_id ?>"><?php echo $e->label_id?>
-                            <?php } ?>
+                                <?php foreach( $label as $e) { ?>
+                                    <!-- "<option value='$e->id;'>".$e->label_name."</option>"; -->
+                                    <option <?php if($e->label_name == $campaign[0]['label_name']){ echo 'selected="selected"'; } ?> value="<?php echo $e->id ?>"><?php echo $e->label_name ?></option>
+                                <?php } ?>
 
                             </select>
-
-
-
-
-                  </select>
-
-
-
-
                         </div>
-
-
-
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data">
                             <button type="button" class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>next</button></a>

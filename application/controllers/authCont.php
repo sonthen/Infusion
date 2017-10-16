@@ -13,7 +13,7 @@ class authCont extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]'); //password should has more than 5 character
 
-		//check fot validation
+		//check for validation
 		if ($this->form_validation->run() == TRUE){
 
 			$username = $_POST['username'];

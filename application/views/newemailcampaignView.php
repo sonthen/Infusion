@@ -28,33 +28,45 @@
                     <?php echo form_open('barang/insert_data'); ?>
 
                     <form action="" method="POST">
+                        <!-- <div class="form-group">
+                            <label for="username" >Username : </label>
+                            <input type="text" class="form-control" name="username" id="username">
+                        </div> -->
                         <div class="form-group">    
                             <label for="campaign_name">Input Campaign Title </label>
-                            <?php echo form_input('kode_barang_binding', '', ['placeholder'=>'kode barang']); ?>
-                            <input type="text" class="form-control" name="campaign_name" >
+                            <input type="text" class="form-control" name="campaign_name" id="campaign_name">
                         </div>
 
                         <div class="form-group">
                             <label for="sequence_qty">Sequence qty </label>
-                            <input type="text" class="form-control" name="sequence_qty" >
+                            <input type="text" class="form-control" name="sequence_qty" id="sequence_qty">
                         </div>
 
                         <div class="form-group">
                             <label for="label_id">Choose Category</label>
 
-                            <select class="form-control"  name="label_name">
+                            <select class="form-control"  name="label_name" id="label_name">
                                 <?php foreach( $label_content as $e) { echo
                                     "<option value='$e->id;'>".$e->label_name."</option>";
                                 } ?>
                             </select>
+
+                            <select name="category_id">
+                                <?php foreach ($cats as $category) { ?>
+                                    <option <?php if($category->category_id == "your desired id"){ echo 'selected="selected"'; } ?> value="<?php echo $category->category_id ?>"><?php echo $category->category?> </option>
+                                <?php } ?>
+                            </select>
+
                         </div>
 
-
-                        
-
-                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
+                        <div class="text-right">
+                        <a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
-                        </div><hr>             
+                        </div><hr>    
+
+                        <div class="text-center">
+                            <button class="btn btn-primary" name="register">Register</button>
+                        </div>         
                     </form>
 
                     <?php echo form_close();?>
