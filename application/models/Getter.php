@@ -8,13 +8,11 @@ class Getter extends CI_Model{
         FROM `campaigns` c
         LEFT JOIN labels l ON c.label_id = l.id"
         );
-
         return $query->result();
-
     }
 
 
-
+// untuk dapatkan 1 baris data campaign (pasangan edit campaign)
     function get_campaign($id)
     {
         return $this->db->get_where('campaigns',['id' => $id]);
@@ -26,9 +24,7 @@ class Getter extends CI_Model{
         $query = $this->db->query("SELECT id, label_name
         FROM `labels`"
         );
-
         return $query->result();
-
     }
 
     function edit_campaign($id) {
@@ -38,10 +34,17 @@ class Getter extends CI_Model{
         LEFT JOIN labels l ON c.label_id = l.id
         WHERE c.id = $id"
         );
-
-
         return $query->result_array() ;
+    }
 
+    function get_sequence($id) {
+        
+        $query = $this->db->query("SELECT c.id, c.sequence_qty, c.campaign_name, l.label_name
+        FROM `campaigns` c
+        LEFT JOIN labels l ON c.label_id = l.id
+        WHERE c.id = $id"
+        );
+        return $query->result_array() ;
     }
 
 
