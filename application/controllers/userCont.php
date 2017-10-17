@@ -23,7 +23,7 @@ class userCont extends CI_Controller {
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
             $this->load->view('dashboardView', $data);
-       
+
         }
 
         function sequenceform(){
@@ -39,7 +39,7 @@ class userCont extends CI_Controller {
 
                             //if form validation true
                 if ($this->form_validation->run() == TRUE){
-                
+
                   $newcampaign = [
                       'campaign_name' =>$_POST['campaign_name'],
                       'sequence_qty'=>$_POST['sequence_qty'],
@@ -47,18 +47,18 @@ class userCont extends CI_Controller {
                       'campaign_type' => $_POST['campaign_type'],
                         'created_at'=>date('Y-m-d')
                   ];
-                  
+
                     $this->db->insert('campaigns', $newcampaign);
                     redirect('userCont/sequenceform','refresh');
-                    
+
                }
 
             }
-            
+
                //for load data categoryat view
                $this->load->model('Getter');
-               $data['label_content'] = $this->Getter->get_label();                 
-               $this->load->view('newsmscampaignView', $data);   
+               $data['label_content'] = $this->Getter->get_label();
+               $this->load->view('newsmscampaignView', $data);
         }
 
 
@@ -81,7 +81,7 @@ class userCont extends CI_Controller {
                 redirect('userCont/dashboardview');
 
         }
-        
+
         // this is for add newcampaign to database
         public function addEmailCampaign(){
 
@@ -92,32 +92,32 @@ class userCont extends CI_Controller {
 
             			//if form validation true
 			if ($this->form_validation->run() == TRUE){
-            
+
               $newcampaign = [
-                  'campaign_name' =>$_POST['campaign_name'],
-                  'sequence_qty'=>$_POST['sequence_qty'],
-                  'label_id' =>$_POST['label_id'],
-                    'created_at'=>date('Y-m-d')
+                'campaign_name' =>$_POST['campaign_name'],
+                'sequence_qty'=>$_POST['sequence_qty'],
+                'label_id' =>$_POST['label_id'],
+                'created_at'=>date('Y-m-d')
               ];
-              
+
                 $this->db->insert('campaigns', $newcampaign);
                 redirect('userCont/sequenceform');
-              
-           }
-           
-        }       
-           
+
+            }
+
+        }
+
         //for load data categoryat view
         $this->load->model('Getter');
-        $data['label_content'] = $this->Getter->get_label();                 
-        $this->load->view('newemailcampaignView', $data);     
+        $data['label_content'] = $this->Getter->get_label();
+        $this->load->view('newemailcampaignView', $data);
 
       }
 
 
 
         public function sequencetest(){
-                        $this->load->view('daniel_test/sequence_test','refresh');
+            $this->load->view('daniel_test/sequence_test','refresh');
         }
 
 
@@ -135,15 +135,52 @@ class userCont extends CI_Controller {
 
         function edit_data(){
             $id = $this->input->post('id');
-						$newcampaign = [
-								'campaign_name' =>$this->input->post('campaign_name'),
-								'sequence_qty'=>$this->input->post('sequence_qty'),
-								'label_id' =>$this->input->post('label_id'),
-						];
+                $newcampaign = [
+                        'campaign_name' =>$this->input->post('campaign_name'),
+                        'sequence_qty'=>$this->input->post('sequence_qty'),
+                        'label_id' =>$this->input->post('label_id'),
+                ];
         $this->db->where('id',$id);
         $this->db->update('campaigns',$newcampaign);
 
         $this->load->view('dashboardView');
         }
+
+
+
+
+
+        ##################### batas coba-coba ######################
+
+        function jason(){
+
+	        $this->load->model('Getter');
+	        $id = $this->uri->segment(3);
+
+            $data['campaign'] = $this->Getter->edit_campaign($id);
+            $data['label'] = $this->Getter->get_label();
+	        $this->load->view('editEmailCampaign',$data);
+
+	    }
+
+        function jason_data(){
+            $id = $this->input->post('id');
+                $newcampaign = [
+                        'campaign_name' =>$this->input->post('campaign_name'),
+                        'sequence_qty'=>$this->input->post('sequence_qty'),
+                        'label_id' =>$this->input->post('label_id'),
+                ];
+        $this->db->where('id',$id);
+        $this->db->update('campaigns',$newcampaign);
+
+        $this->load->view('dashboardView');
+        }
+
+				function delete(){
+					$id = $this->uri->segment(3);
+					$this->db->where('id', $id);
+					$this->db->delete('campaigns');
+
+				}
 
 }
