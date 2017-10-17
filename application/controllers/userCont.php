@@ -26,7 +26,7 @@ class userCont extends CI_Controller {
        
         }
 
-        function emailform(){
+        function sequenceform(){
             $this->load->view('sequenceform');
         }
         
@@ -84,7 +84,7 @@ class userCont extends CI_Controller {
               ];
               
                 $this->db->insert('campaigns', $newcampaign);
-                redirect('userCont/emailform');
+                redirect('userCont/sequenceform');
               
            }
            
@@ -96,11 +96,6 @@ class userCont extends CI_Controller {
         $this->load->view('newemailcampaignView', $data);     
 
       }
-
-
-        public function sequenceform(){                        
-                        $this->load->view('sequenceform', 'refresh');
-        }
 
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');

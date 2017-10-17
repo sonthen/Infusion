@@ -8,9 +8,7 @@ class Getter extends CI_Model{
         FROM `campaigns` c
         LEFT JOIN labels l ON c.label_id = l.id"
         );
-
         return $query->result();
-
     }
 
 
@@ -26,9 +24,7 @@ class Getter extends CI_Model{
         $query = $this->db->query("SELECT id, label_name
         FROM `labels`"
         );
-
         return $query->result();
-
     }
 
     function edit_campaign($id) {
@@ -38,10 +34,7 @@ class Getter extends CI_Model{
         LEFT JOIN labels l ON c.label_id = l.id
         WHERE c.id = $id"
         );
-
-
         return $query->result_array() ;
-
     }
 
 

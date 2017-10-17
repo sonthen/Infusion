@@ -14,7 +14,7 @@
 <?php $this->load->view('header'); ?>
 
   <div class="container-fluid"><a href="<?php echo base_url('index.php/userCont/dashboardview'); ?>">
-    <button type="button" class="btn btn-default navbar-btn">Back</button></a>
+    <button type="button" class="btn btn-default navbar-btn">Back to Dashboard</button></a>
 <div class="row">
     <div class="col-md-12">
         <div class="row">
