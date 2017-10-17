@@ -29,19 +29,35 @@ class userCont extends CI_Controller {
         function sequenceform(){
             $this->load->view('sequenceform');
         }
-        
-
-        public function emailcampaign() {
-
-            $this->load->model('Getter');
-            $data['label_content'] = $this->Getter->get_label();
-            $this->load->view('newemailcampaignView', $data);
-
-        }
 
 
-        public function smscampaign(){
-            $this->load->view('newsmscampaignView');
+        public function addSmsCampaign(){
+            if (isset($_POST['addSmsCampaign'])){
+                $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
+                $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
+                $this->form_validation->set_rules('label_id', 'label id', 'required');
+    
+                            //if form validation true
+                if ($this->form_validation->run() == TRUE){
+                
+                  $newcampaign = [
+                      'campaign_name' =>$_POST['campaign_name'],
+                      'sequence_qty'=>$_POST['sequence_qty'],
+                      'label_id' =>$_POST['label_id'],
+                        'created_at'=>date('Y-m-d')
+                  ];
+                  
+                    $this->db->insert('campaigns', $newcampaign);
+                    redirect('userCont/sequenceform','refresh');
+                    
+               }
+
+            }
+            
+               //for load data categoryat view
+               $this->load->model('Getter');
+               $data['label_content'] = $this->Getter->get_label();                 
+               $this->load->view('newsmscampaignView', $data);   
         }
 
 
@@ -66,9 +82,9 @@ class userCont extends CI_Controller {
         }
         
         // this is for add newcampaign to database
-        public function addCampaign(){
+        public function addEmailCampaign(){
 
-            if (isset($_POST['addCampaign'])){
+            if (isset($_POST['addEmailCampaign'])){
             $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
             $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
             $this->form_validation->set_rules('label_id', 'label id', 'required');
@@ -97,6 +113,11 @@ class userCont extends CI_Controller {
 
       }
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 28236120d6beb747bf007652d274981d11768c4d
         public function sequencetest(){
             $this->load->view('daniel_test/sequence_test','refresh');
         }
