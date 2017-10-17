@@ -22,18 +22,22 @@
                 <div class="mailborder">
                     <button style="float:right;margin-top:-15px;" type="button"  class="btn btn-default navbar-btn">Sequence 1</button>
                         <form action="" method="POST">
+
                             <div class="form-group">    
                                 <label for="Delay">Delay </label>
                                 <input type="text" class="form-control" name="campaign-title" id="Delay" placeholder="input Delay...">
                             </div>
+
                             <div class="form-group">
                                 <label for="Subject">Subject</label>
                                 <input type="text" class="form-control" name="sequence-qty" id="subject" placeholder="Input Subject...">
                             </div>
+
                             <div class="form-group">
                                 <label for="body">Body</label>
                                 <input type="text" class="form-control" id="bodym" name="sequence-qty" id="body">
                             </div>
+                            
                             <div class="text-right">
                                 <button type="button" class="btn btn-primary" name="login">send</button>
                             </div><hr>         
