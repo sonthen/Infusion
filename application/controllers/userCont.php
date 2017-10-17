@@ -84,8 +84,8 @@ class userCont extends CI_Controller {
               ];
               
                 $this->db->insert('campaigns', $newcampaign);
-                redirect('userCont/emailform','refresh');
-                
+                redirect('userCont/emailform');
+              
            }
            
         }       
@@ -128,6 +128,8 @@ class userCont extends CI_Controller {
 						];
         $this->db->where('id',$id);
         $this->db->update('campaigns',$newcampaign);
+
+        $this->load->view('dashboardView');
         }
 
 }
