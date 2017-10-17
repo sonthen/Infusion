@@ -72,4 +72,5 @@ form_hidden('id', $this->uri->segment(3));
 
 form_close();
 (''); ?>
+
 <?php $this->load->view('footer'); ?>
