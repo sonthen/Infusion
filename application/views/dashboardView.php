@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3>
-                                <a href="<?php echo base_url(); ?>index.php/userCont/addcampaign">
+                                <a href="<?php echo base_url(); ?>index.php/userCont/addEmailCampaign">
                                 <button type="button" class="btn btn-status btn-primary">New Email Campaign</button>Email
                                 </a>
                             </h3>
@@ -44,7 +44,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3><a href="<?php echo base_url(); ?>index.php/userCont/smscampaign">
+                            <h3><a href="<?php echo base_url(); ?>index.php/userCont/addSmsCampaign">
                             <button type="button" class="btn btn-status btn-primary">New SMS Campaign</button>SMS</h3></a>
                         </div>
                     </div>

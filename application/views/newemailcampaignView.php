@@ -17,7 +17,7 @@
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
-<?php echo form_open('userCont/addCampaign'); ?>
+<?php echo form_open('userCont/addEmailCampaign'); ?>
 
 
   <div class="container-fluid">
@@ -54,7 +54,7 @@
                             </select>
 
                         <div class="text-right">
-                            <button class="btn btn-primary" name="addCampaign">next</button></a>
+                            <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
                         </div><hr>             
                     </form>
 
