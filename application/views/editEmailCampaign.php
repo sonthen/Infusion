@@ -56,6 +56,10 @@ form_hidden('id', $this->uri->segment(3));
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data">
                             <button  class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>Next</button></a>
                         </div><hr>
+
+                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/delete">
+                            <button  class="btn btn-danger" ><?php form_submit ('SUBMIT', '')?>Delete</button></a>
+                        </div><hr>
                     </form>
 
                 </div>

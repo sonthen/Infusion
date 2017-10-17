@@ -24,6 +24,7 @@
     <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+              <h1>EMAIL</h1>
                 <div class="berborder" >
 
 
@@ -34,7 +35,7 @@
                             <label for="username" >Username : </label>
                             <input type="text" class="form-control" name="username" id="username">
                         </div> -->
-                        <div class="form-group">    
+                        <div class="form-group">
                             <label for="campaign_name">Input Campaign Title </label>
                             <input type="text" class="form-control" name="campaign_name" id="campaign_name">
                         </div>
@@ -55,7 +56,7 @@
 
                         <div class="text-right">
                             <button class="btn btn-primary" name="addCampaign">next</button></a>
-                        </div><hr>             
+                        </div><hr>
                     </form>
 
                     <?php echo form_close();?>
@@ -65,7 +66,7 @@
 
   </div>
 
-  <?php echo 
+  <?php echo
 
 form_close();
 (''); ?>

@@ -23,13 +23,13 @@ class userCont extends CI_Controller {
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
             $this->load->view('dashboardView', $data);
-       
+
         }
 
         function emailform(){
             $this->load->view('sequenceform');
         }
-        
+
 
         public function emailcampaign() {
 
@@ -64,7 +64,7 @@ class userCont extends CI_Controller {
                 redirect('userCont/dashboardview');
 
         }
-        
+
         // this is for add newcampaign to database
         public function addCampaign(){
 
@@ -75,30 +75,30 @@ class userCont extends CI_Controller {
 
             			//if form validation true
 			if ($this->form_validation->run() == TRUE){
-            
+
               $newcampaign = [
                   'campaign_name' =>$_POST['campaign_name'],
                   'sequence_qty'=>$_POST['sequence_qty'],
                   'label_id' =>$_POST['label_id'],
                     'created_at'=>date('Y-m-d')
               ];
-              
+
                 $this->db->insert('campaigns', $newcampaign);
                 redirect('userCont/emailform','refresh');
-                
+
            }
-           
-        }       
-           
+
+        }
+
         //for load data categoryat view
         $this->load->model('Getter');
-        $data['label_content'] = $this->Getter->get_label();                 
-        $this->load->view('newemailcampaignView', $data);     
+        $data['label_content'] = $this->Getter->get_label();
+        $this->load->view('newemailcampaignView', $data);
 
       }
 
 
-        public function sequenceform(){                        
+        public function sequenceform(){
                         $this->load->view('sequenceform', 'refresh');
         }
 
@@ -129,5 +129,12 @@ class userCont extends CI_Controller {
         $this->db->where('id',$id);
         $this->db->update('campaigns',$newcampaign);
         }
+
+				function delete(){
+					$id = $this->uri->segment(3);
+					$this->db->where('id', $id);
+					$this->db->delete('campaigns');
+
+				}
 
 }
