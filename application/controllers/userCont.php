@@ -100,8 +100,8 @@ class userCont extends CI_Controller {
               ];
               
                 $this->db->insert('campaigns', $newcampaign);
-                redirect('userCont/emailform','refresh');
-                
+                redirect('userCont/sequenceform');
+              
            }
            
         }       
@@ -113,8 +113,11 @@ class userCont extends CI_Controller {
 
       }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 28236120d6beb747bf007652d274981d11768c4d
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
@@ -141,6 +144,8 @@ class userCont extends CI_Controller {
 						];
         $this->db->where('id',$id);
         $this->db->update('campaigns',$newcampaign);
+
+        $this->load->view('dashboardView');
         }
 
 }
