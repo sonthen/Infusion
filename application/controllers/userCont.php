@@ -36,7 +36,7 @@ class userCont extends CI_Controller {
                 $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
                 $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
                 $this->form_validation->set_rules('label_id', 'label id', 'required');
-    
+
                             //if form validation true
                 if ($this->form_validation->run() == TRUE){
                 
@@ -44,6 +44,7 @@ class userCont extends CI_Controller {
                       'campaign_name' =>$_POST['campaign_name'],
                       'sequence_qty'=>$_POST['sequence_qty'],
                       'label_id' =>$_POST['label_id'],
+                      'campaign_type' => $_POST['campaign_type'],
                         'created_at'=>date('Y-m-d')
                   ];
                   
@@ -113,11 +114,8 @@ class userCont extends CI_Controller {
 
       }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 28236120d6beb747bf007652d274981d11768c4d
         public function sequencetest(){
                         $this->load->view('daniel_test/sequence_test','refresh');
         }
