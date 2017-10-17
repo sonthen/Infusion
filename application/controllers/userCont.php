@@ -113,11 +113,8 @@ class userCont extends CI_Controller {
 
       }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 28236120d6beb747bf007652d274981d11768c4d
         public function sequencetest(){
             $this->load->view('daniel_test/sequence_test','refresh');
         }
