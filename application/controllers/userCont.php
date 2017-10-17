@@ -44,6 +44,7 @@ class userCont extends CI_Controller {
                       'campaign_name' =>$_POST['campaign_name'],
                       'sequence_qty'=>$_POST['sequence_qty'],
                       'label_id' =>$_POST['label_id'],
+                      'campaign_type' => $_POST['campaign_type'],
                         'created_at'=>date('Y-m-d')
                   ];
 

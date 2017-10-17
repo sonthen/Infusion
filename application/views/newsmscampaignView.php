@@ -41,6 +41,7 @@
                         <div class="form-group">
                             <label for="sequence_qty">Sequence qty </label>
                             <input type="text" class="form-control" name="sequence_qty" id="qty">
+                            <input type="hidden" name="campaign_type" value="1">
                         </div>
 
                         <div class="form-group">

@@ -62,7 +62,7 @@
 
                 <!-- kotak-kotak email -->
                     <?php foreach( $dashboard_content as $e) {?>
-                        <?php if($e->type == 0){ ?>
+                        <?php if($e->campaign_type == 0){ ?>
                         <div class="col-md-6 email-view">
                             <h3>
                                 <?php echo $e->campaign_name ?>
@@ -99,7 +99,7 @@
 
                     <!-- kotak-kotak sms -->
                         <?php foreach( $dashboard_content as $e) {?>
-                            <?php if($e->type == 1){ ?>
+                            <?php if($e->campaign_type == 1){ ?>
                             <div class="col-md-6 email-view">
                                 <h3>
                                     <?php echo $e->campaign_name ?>
