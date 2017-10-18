@@ -37,13 +37,13 @@
                         </div> -->
                         <div class="form-group">
                             <label for="campaign_name">Input Campaign Title </label>
-                            
+
                             <input value='<?php echo set_value('campaign_name')?>' type="text" class="form-control" name="campaign_name" id="campaign_name">
                         </div>
 
                         <div class="form-group">
                             <label for="sequence_qty">Sequence qty </label>
-                    
+
                             <input value='<?php echo set_value('sequence_qty')?>'type="text" class="form-control" name="sequence_qty" id="sequence_qty">
                         </div>
 
@@ -57,14 +57,13 @@
                             </select>
 
                         <div class="text-right">
-<<<<<<< HEAD
-                            <button class="btn btn-primary" name="addCampaign">next</button></a>
-                        </div><hr>
-=======
+
+                
+
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
-                        </div><hr>             
-                        
->>>>>>> 6be19834e5b89a09d0c01a1b2031b5bc4e5d6125
+                        </div><hr>
+
+
                     </form>
 
                     <?php echo form_close();?>
@@ -74,12 +73,10 @@
 
   </div>
 
-<<<<<<< HEAD
+
   <?php echo
-=======
-    
-  <?php echo 
->>>>>>> 6be19834e5b89a09d0c01a1b2031b5bc4e5d6125
+
+
 
 form_close();
 (''); ?>
