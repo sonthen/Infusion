@@ -49,12 +49,10 @@
                             </select>
                         </div>
 
-
-                        
-
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
-                        </div><hr>             
+                        </div><hr>  
+                        
                     </form>
 
                     <?php echo form_close();?>

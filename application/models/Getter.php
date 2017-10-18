@@ -33,7 +33,23 @@ class Getter extends CI_Model{
         return $query->result();
    
     }
+//testing D
+    function get_cobakirim()
+    {
+        $query = $this->db->query("SELECT email FROM `users`");
+        
+        return $query->result_array();
+    }
+    function get_lomtopup()
+    {
+        $query = $this->db->query("SELECT * FROM `iseng_kcp` WHERE topup_date <= NOW() + INTERVAL 30 DAY");
+                
+
+        return $query->result();
+    }
+    
 }
+
 
 
 

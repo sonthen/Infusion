@@ -6,7 +6,7 @@
       /* max-width: 30%; */
       
     }
-    #bodym{
+    #body{
       height:130px;
     }   
     .btn.btn-success{
@@ -17,6 +17,7 @@
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
+<?php echo form_open('smtpemailCont/kuykirimemail'); ?>
   <div class="container-fluid"><a href="<?php echo base_url(); ?>index.php/userCont/emailcampaign">
     <button type="button" href="<?php echo base_url(); ?>index.php/authCont/logout" class="btn btn-default navbar-btn">Back</button></a>
 <div class="row">
@@ -29,15 +30,16 @@
                             
                             <div class="form-group">
                                 <label for="Subject">Subject</label>
-                                <input type="text" class="form-control" name="sequence-qty" id="subject" placeholder="Input Subject...">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Input Subject...">
                             </div>
                             <div class="form-group">
                                 <label for="body">Body</label>
-                                <input type="text" class="form-control" id="bodym" name="sequence-qty" id="body">
+                                <input type="text" class="form-control" name="body" id="body">
                             </div>
                             <div class="text-right">
-                                <button type="button" class="btn btn-success" name="login">kuy</button>
-                            </div><hr>         
+                                <button  class="btn btn-success" name="kuykirimemail">kuy</button>
+                            </div><hr>     
+                                
                         </form>
                     </div>
                 </div>
@@ -50,4 +52,8 @@
         </div>
 
 <!-- this is for load footer template -->
+
+
+<?php echo form_close(); 
+(''); ?>
 <?php $this->load->view('footer'); ?>

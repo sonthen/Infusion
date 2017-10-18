@@ -40,6 +40,14 @@ class userCont extends CI_Controller {
 
         }
         
+        // public function danieltest()
+        // {
+        //     $this->load->model('Getter');
+        //     $data['kirim_content'] = $this->Getter->get_cobakirim();
+        //     $this->load->view('daniel_test/sequence_test.php', $data);
+        // }
+
+
        
 
         public function emailform(){
