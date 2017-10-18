@@ -17,41 +17,56 @@
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
 
-<?php echo form_open('userCont/campaignregist'); ?>
+<?php echo form_open('userCont/addEmailCampaign'); ?>
 
 
   <div class="container-fluid">
     <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+              <h1>EMAIL</h1>
                 <div class="berborder" >
-                    <?php echo form_open('barang/insert_data'); ?>
 
+
+        <!-- alert for handle empty form -->
+        <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
                     <form action="" method="POST">
-                        <div class="form-group">    
+                        <!-- <div class="form-group">
+                            <label for="username" >Username : </label>
+                            <input type="text" class="form-control" name="username" id="username">
+                        </div> -->
+                        <div class="form-group">
                             <label for="campaign_name">Input Campaign Title </label>
-                            <?php echo form_input('kode_barang_binding', '', ['placeholder'=>'kode barang']); ?>
-                            <input type="text" class="form-control" name="campaign_name" >
+                            
+                            <input value='<?php echo set_value('campaign_name')?>' type="text" class="form-control" name="campaign_name" id="campaign_name">
                         </div>
 
                         <div class="form-group">
                             <label for="sequence_qty">Sequence qty </label>
-                            <input type="text" class="form-control" name="sequence_qty" >
+                    
+                            <input value='<?php echo set_value('sequence_qty')?>'type="text" class="form-control" name="sequence_qty" id="sequence_qty">
                         </div>
 
                         <div class="form-group">
                             <label for="label_id">Choose Category</label>
 
-                            <select class="form-control"  name="label_name">
+                            <select class="form-control"  name="label_id" id="label_id">
                                 <?php foreach( $label_content as $e) { echo
                                     "<option value='$e->id;'>".$e->label_name."</option>";
                                 } ?>
                             </select>
+<<<<<<< HEAD
                         </div>
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
                         </div><hr>  
+=======
+
+                        <div class="text-right">
+                            <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
+                        </div><hr>             
+>>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0
                         
                     </form>
 
@@ -62,8 +77,6 @@
 
   </div>
 
-  <?php echo 
-
-form_close();
-(''); ?>
+    
+  <?php echo form_close(); ?>
 <?php $this->load->view('footer'); ?>
