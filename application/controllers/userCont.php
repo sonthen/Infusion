@@ -44,6 +44,7 @@ class userCont extends CI_Controller {
                       'campaign_name' =>$_POST['campaign_name'],
                       'sequence_qty'=>$_POST['sequence_qty'],
                       'label_id' =>$_POST['label_id'],
+                      'campaign_type' => $_POST['campaign_type'],
                         'created_at'=>date('Y-m-d')
                   ];
 
@@ -142,44 +143,26 @@ class userCont extends CI_Controller {
         $this->db->where('id',$id);
         $this->db->update('campaigns',$newcampaign);
 
-        $this->load->view('dashboardView');
+        redirect("usercont/dashboardview");
+        }
+
+        function delete(){
+            $id = $this->uri->segment(3);
+            // $this->db->where('campaign_id', $id);
+            // $this->db->delete('sequencess_status');
+            $this->db->where('campaign_id', $id);
+            $this->db->delete('sequencess');
+            $this->db->where('id', $id);
+            $this->db->delete('campaigns');
+            redirect("usercont/dashboardview");
+
         }
 
 
+        
 
 
 
         ##################### batas coba-coba ######################
-
-        function jason(){
-
-	        $this->load->model('Getter');
-	        $id = $this->uri->segment(3);
-
-            $data['campaign'] = $this->Getter->edit_campaign($id);
-            $data['label'] = $this->Getter->get_label();
-	        $this->load->view('editEmailCampaign',$data);
-
-	    }
-
-        function jason_data(){
-            $id = $this->input->post('id');
-                $newcampaign = [
-                        'campaign_name' =>$this->input->post('campaign_name'),
-                        'sequence_qty'=>$this->input->post('sequence_qty'),
-                        'label_id' =>$this->input->post('label_id'),
-                ];
-        $this->db->where('id',$id);
-        $this->db->update('campaigns',$newcampaign);
-
-        $this->load->view('dashboardView');
-        }
-
-				function delete(){
-					$id = $this->uri->segment(3);
-					$this->db->where('id', $id);
-					$this->db->delete('campaigns');
-
-				}
 
 }

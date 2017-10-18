@@ -57,12 +57,8 @@
                             </select>
 
                         <div class="text-right">
-
-                
-
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
                         </div><hr>
-
 
                     </form>
 
@@ -74,10 +70,5 @@
   </div>
 
 
-  <?php echo
-
-
-
-form_close();
-(''); ?>
+  <?php echo form_close(); ?>
 <?php $this->load->view('footer'); ?>

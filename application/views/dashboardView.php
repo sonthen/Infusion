@@ -48,14 +48,8 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-
-
-                          <h3>
-                            <a href="<?php echo base_url(); ?>index.php/userCont/smscampaign">
-                            <button type="button" class="btn btn-status btn-primary">New SMS Campaign</button>SMS</a>
-                          </h3>
-
-
+                            <h3><a href="<?php echo base_url(); ?>index.php/userCont/addSmsCampaign">
+                            <button type="button" class="btn btn-status btn-primary">New SMS Campaign</button>SMS</h3></a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +62,7 @@
 
                 <!-- kotak-kotak email -->
                     <?php foreach( $dashboard_content as $e) {?>
-                        <?php if($e->type == 0){ ?>
+                        <?php if($e->campaign_type == 0){ ?>
                         <div class="col-md-6 email-view">
                             <h3>
                                 <?php echo $e->campaign_name ?>
@@ -105,7 +99,7 @@
 
                     <!-- kotak-kotak sms -->
                         <?php foreach( $dashboard_content as $e) {?>
-                            <?php if($e->type == 1){ ?>
+                            <?php if($e->campaign_type == 1){ ?>
                             <div class="col-md-6 email-view">
                                 <h3>
                                     <?php echo $e->campaign_name ?>
