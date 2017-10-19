@@ -32,11 +32,24 @@ class userCont extends CI_Controller {
         }
 
 
+        
+        
+        // public function danieltest()
+        // {
+        //     $this->load->model('Getter');
+        //     $data['kirim_content'] = $this->Getter->get_cobakirim();
+        //     $this->load->view('daniel_test/sequence_test.php', $data);
+        // }
+
+
+       
+
         public function addSmsCampaign(){
             if (isset($_POST['addSmsCampaign'])){
                 $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
                 $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
                 $this->form_validation->set_rules('label_id', 'label id', 'required');
+
 
                             //if form validation true
                 if ($this->form_validation->run() == TRUE){

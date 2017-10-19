@@ -10,7 +10,17 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
+<<<<<<< HEAD
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- navbar header style require this -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    
+  
+    
+=======
     <link href="<?php echo base_url(); ?>assets/w3.css" rel="stylesheet">
+>>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
 
     
     <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet">

@@ -26,6 +26,16 @@ class Getter extends CI_Model{
         return $query->result();
     }
 
+//testing D
+    function get_cobakirim()
+    {
+        $query = $this->db->query("SELECT email FROM `users`");
+        
+        return $query->result_array();
+    }
+  
+
+
     function edit_campaign($id) {
 
         $query = $this->db->query("SELECT id, campaign_name
@@ -58,6 +68,5 @@ class Getter extends CI_Model{
         );
         return $query->result_array() ;
     }
-
 
 }

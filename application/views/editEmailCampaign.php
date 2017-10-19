@@ -16,7 +16,7 @@
 
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-
+<?php $this->load->view('navbar');?>
 <?php echo form_open('userCont/edit_data'); ?>
 <?php echo form_hidden('id', $this->uri->segment(3)); ?>
 
