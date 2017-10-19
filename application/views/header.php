@@ -10,9 +10,11 @@
     <!-- Bootstrap -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
+    <link href="<?php echo base_url(); ?>assets/w3.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet">
+
 
     <!-- Optional theme -->
 
@@ -24,7 +26,56 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style media="screen">
-body{
+.input-campaign
+{
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 3px solid rgba(248, 133, 18, 0.68);
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.btn-create-campaign
+{
+    float: right;
+    background-color: rgba(248, 133, 18, 0.68);
+    color: #fdfdfd;
+    border-radius: 4px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.modal1
+{
+    border-radius: 5px;
+}
+
+.modal-campaign
+{
+    background-color: rgba(248, 133, 18, 0.7)!important;
+}
+
+.modal-text
+{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.w3-modal-content.w3-card-4 {
+    border-radius: 8px;
+    width: 53%;
+}
+
+.w3-xbtn{
+  background-color: rgb(250, 171, 101)!important;
+}
+
+.w3-xbtn:hover{
+  background-color: rgb(250, 171, 101)!important;
 }
 </style>
   </head>
