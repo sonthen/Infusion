@@ -7,7 +7,7 @@
 
       box-shadow: 0px 0px 10px 0px grey;
       max-width: 65%;
-      
+      background-color: white;
       
     }
     .btn.btn-primary{
@@ -60,6 +60,7 @@
       padding: 8% 1px 0 20%;
       left:7%;
       top:36%;
+      
     }
 </style>
 <!-- this is for load header template -->
