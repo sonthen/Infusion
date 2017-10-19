@@ -8,135 +8,134 @@
 
 
 <?php $this->load->view('header'); ?>
+
 <div class="container-fluid">
   <div class="bkg row">
 
           <div class="col-md-5">
             <div class="row">
-                <div class="col-md-offset-1 col-md-11 email-title">
-                    <p class="email-text">Email</p>
-                </div>
+              <div class="col-md-offset-1 col-md-11 email-title">
+                  <p class="email-text">Email</p>
+              </div>
             </div>
-        </div>
+          </div>
 
           <div class="col-md-5 col-md-offset-1">
-              <div class="row">
-                  <div class="col-md-offset-1 col-md-11">
-                      <h3 class="sms-text">SMS</h3>
-                        <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
-                  </div>
+            <div class="row">
+              <div class="col-md-offset-1 col-md-11">
+                <h3 class="sms-text">SMS</h3>
+                <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
               </div>
+            </div>
           </div>
 
-          <div class="col-md-6"  >
-            <?php foreach( $dashboard_content as $e) {?>
-              <?php if($e->campaign_type == 0){ ?>
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="box1 col-md-offset-1 col-md-9">
-                        <div class="box-label">
-                            <span>SEQ :</span>
-                            <span> 300 </span>
-                            <span class="blue-line"></span>
-                            <span><?php echo $e->label_name ?></span>
-                            <span class="blue-line"></span>
-                            <span> <?php echo $e->created_at ?> </span>
-                        </div>
+          <?php foreach( $dashboard_content as $e) {?>
+            <div class="col-md-6">
+              <div class="col-md-12">
+                <div class="row">
+                <?php if($e->stat==0){ ?>
+                  <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
+                    <div class="box-label">
+                        <span>SEQ :</span>
+                        <span> 300 </span>
+                        <span class="blue-line"></span>
+                        <span> <?php echo $e->created_at ?> </span>
+                    </div>
 
-                      <?php if($e->status==0){ ?>
+                    
                       <span class="btn-indikator">
-                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
+                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->stat); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
                         
                         <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
                       </span>
 
-                        <?php } else { ?>
+                
+
+                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+                                        
+                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
+                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                  </div>
+                 <?php } ?>
+
+                 <!-- ######################### -->
+
+                 <?php if($e->stat==1){ ?>
+                  <div class="box1 col-md-offset-1 col-md-9">
+                    <div class="box-label">
+                        <span>SEQ :</span>
+                        <span> 300 </span>
+                        <span class="blue-line"></span>
+                        <span> <?php echo $e->created_at ?> </span>
+                    </div>
+
+                    
                       <span class="btn-indikator">
                           
                           <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button>
                         
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
+                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
                       </span>
-                      <?php } ?>
+                    
 
-                      <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                      <a href="<?php echo base_url('userCont/edit/'.$e->id); ?>">
-                      <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
-                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-                    </div>
+                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+                                        
+                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
+                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                   </div>
+                 <?php } ?>
 
+
+                </div>
+              </div>
             </div>
-              <?php } ?>
-              <?php } ?>
-          </div>
-
-          <div class="col-md-6"  >
-            <?php foreach( $dashboard_content as $e) {?>
-              <?php if($e->campaign_type == 1){ ?>
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="box1 col-md-offset-1 col-md-9">
-                        <div class="box-label">
-                            <span>SEQ :</span>
-                            <span> 3 </span>
-                            <span class="blue-line"></span>
-                            <span><?php echo $e->label_name ?></span>
-                            <span class="blue-line"></span>
-                            <span>13/10/2017</span>
-                        </div>
-
-                      <?php if($e->status==0){ ?>
-                      <span class="btn-indikator">
-                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
-                        
-                        <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
-                      </span>
-
-                        <?php } else { ?>
-                      <span class="btn-indikator">
-                          
-                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button>
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
-                          <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
-                      </span>
-                      <?php } ?>
-
-                      <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                      <a href="<?php echo base_url('userCont/edit/'.$e->id); ?>">
-                      <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
-                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-                    </div>
-                  </div>
-
-            </div>
-              <?php } ?>
-              <?php } ?>
-          </div>
-
-
+          <?php } ?>
 
  </div>
 </div>
 
 <div class="w3-container modal1">
-          <div id="id01" class="w3-modal  w3-animate-opacity">
-              <div class="w3-modal-content w3-card-4">
-                  <header class="w3-container w3-teal modal-campaign modal1">
-                      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
-                      <h2>Create Campaign</h2>
-                  </header>
-                  <div class="w3-container modal1">
-                      <p class="modal-text">Title Campaign</p>
-                      <input type="text" class="input-campaign">
-                      <button type="button" class="btn-create-campaign btn">Create</button>
-                  </div>
-              </div>
-          </div>
+  <?php echo form_open('userCont/addEmailCampaign'); ?>
+    <div id="id01" class="w3-modal  w3-animate-opacity">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-teal modal-campaign modal1">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+            <h2>Create Campaign</h2>
+            <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+        </header>
+        <div class="w3-container modal1">
+          <p class="modal-text">Title Campaign</p>
+          <input value='<?php echo set_value('campaign_name')?>' type="text" class="form-control" name="campaign_name" id="campaign_name">
+
+          <a href="<?php echo base_url('usercont/addEmailCampaign'); ?>">
+          <button class="btn-create-campaign btn" name="addEmailCampaign">Create</button></a>
+        </div>
+      </div>
     </div>
+  <?php echo form_close(); ?>
+</div>
+
+<div class="w3-container modal1">
+  <?php echo form_open('userCont/edit_data'); ?>
+  <?php echo form_hidden('id', $this->uri->segment(3)); ?>
+    <div id="id02" class="w3-modal  w3-animate-opacity">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-teal modal-campaign modal1">
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+          <h2>Create Campaign</h2>
+        </header>
+        <div class="w3-container modal1">
+          <p class="modal-text">Title Campaign</p>
+          <?php echo form_input('campaign_name', $campaign[0]["campaign_name"], ["type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
+
+          <button  class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>change</button>
+        </div>
+      </div>
+    </div>
+  <?php echo form_close(); ?>
+</div>
 
 
 

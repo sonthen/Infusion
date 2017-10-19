@@ -22,6 +22,7 @@ class userCont extends CI_Controller {
 
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
+            
             $this->load->view('dashboardView', $data);
 
         }
@@ -67,14 +68,14 @@ class userCont extends CI_Controller {
                 $this->load->model('Getter');
 
                 $id= $this->uri->segment(3);
-                $status= $this->uri->segment(4);
+                $stat= $this->uri->segment(4);
                 $data['dashboard_content'] = $this->Getter->get_campaign($id);
 
-                if($status==0){
-                    $newStat = ['status' => 1];
+                if($stat==0){
+                    $newStat = ['stat' => 1];
                 }
                 else{
-                    $newStat = ['status' => 0];
+                    $newStat = ['stat' => 0];
                 }
                 $this->db->where('id',$id);
                 $this->db->update('campaigns',$newStat);
@@ -87,32 +88,24 @@ class userCont extends CI_Controller {
 
             if (isset($_POST['addEmailCampaign'])){
             $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
-            $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
-            $this->form_validation->set_rules('label_id', 'label id', 'required');
 
-            			//if form validation true
-			if ($this->form_validation->run() == TRUE){
+                //if form validation true
+                if ($this->form_validation->run() == TRUE){
 
-              $newcampaign = [
-                'campaign_name' =>$_POST['campaign_name'],
-                'sequence_qty'=>$_POST['sequence_qty'],
-                'label_id' =>$_POST['label_id'],
-                'created_at'=>date('Y-m-d')
-              ];
+                    $newcampaign = [
+                        'campaign_name' =>$_POST['campaign_name']
+                    ];
 
-                $this->db->insert('campaigns', $newcampaign);
-                redirect('userCont/sequenceform');
+                    $this->db->insert('campaigns', $newcampaign);
+                    redirect('userCont/dashboardview');
+                    
+                }
 
             }
 
+            redirect('userCont/dashboardview');
+
         }
-
-        //for load data categoryat view
-        $this->load->model('Getter');
-        $data['label_content'] = $this->Getter->get_label();
-        $this->load->view('newemailcampaignView', $data);
-
-      }
 
 
 
@@ -124,32 +117,31 @@ class userCont extends CI_Controller {
 		function edit(){
 	        //maka dia akan print nama functionnya
 	        // echo $this->uri->segment(2);
-	        $this->load->model('Getter');
+            $this->load->model('Getter');
+            
+            
 	        $id = $this->uri->segment(3);
-
+            $data['dashboard_content'] = $this->Getter->get_dash_content();
             $data['campaign'] = $this->Getter->edit_campaign($id);
-            $data['label'] = $this->Getter->get_label();
-	        $this->load->view('editEmailCampaign',$data);
+	        $this->load->view('dashboardView',$data);
 
 	    }
 
         function edit_data(){
             $id = $this->input->post('id');
                 $newcampaign = [
-                        'campaign_name' =>$this->input->post('campaign_name'),
-                        'sequence_qty'=>$this->input->post('sequence_qty'),
-                        'label_id' =>$this->input->post('label_id'),
+                    'campaign_name' =>$this->input->post('campaign_name')
                 ];
-        $this->db->where('id',$id);
-        $this->db->update('campaigns',$newcampaign);
+            $this->db->where('id',$id);
+            $this->db->update('campaigns',$newcampaign);
 
-        redirect("usercont/dashboardview");
+            redirect("usercont/dashboardview");
         }
 
         function delete(){
             $id = $this->uri->segment(3);
             // $this->db->where('campaign_id', $id);
-            // $this->db->delete('sequencess_status');
+            // $this->db->delete('sequencess_stat');
             $this->db->where('campaign_id', $id);
             $this->db->delete('sequencess');
             $this->db->where('id', $id);

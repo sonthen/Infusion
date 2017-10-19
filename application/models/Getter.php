@@ -4,9 +4,8 @@ class Getter extends CI_Model{
     //this is for get dashboard view
     function get_dash_content()
     {
-        $query = $this->db->query("SELECT c.id, c.campaign_type, c.campaign_name, l.label_name, c.status, c.created_at
-        FROM `campaigns` c
-        LEFT JOIN labels l ON c.label_id = l.id"
+        $query = $this->db->query("SELECT id, campaign_name, stat, created_at
+        FROM `campaigns`"
         );
         return $query->result();
     }
@@ -29,10 +28,9 @@ class Getter extends CI_Model{
 
     function edit_campaign($id) {
 
-        $query = $this->db->query("SELECT c.id, c.sequence_qty, c.campaign_name, l.label_name
-        FROM `campaigns` c
-        LEFT JOIN labels l ON c.label_id = l.id
-        WHERE c.id = $id"
+        $query = $this->db->query("SELECT id, campaign_name
+        FROM `campaigns` 
+        WHERE id = $id"
         );
         return $query->result_array() ;
     }
