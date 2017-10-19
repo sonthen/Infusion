@@ -57,14 +57,9 @@
                             </select>
 
                         <div class="text-right">
-<<<<<<< HEAD
-                            <button class="btn btn-primary" name="addCampaign">next</button></a>
-                        </div><hr>
-=======
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
                         </div><hr>             
                         
->>>>>>> 6be19834e5b89a09d0c01a1b2031b5bc4e5d6125
                     </form>
 
                     <?php echo form_close();?>
@@ -74,12 +69,7 @@
 
   </div>
 
-<<<<<<< HEAD
   <?php echo
-=======
-    
-  <?php echo 
->>>>>>> 6be19834e5b89a09d0c01a1b2031b5bc4e5d6125
 
 form_close();
 (''); ?>
