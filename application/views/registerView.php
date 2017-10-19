@@ -50,6 +50,7 @@
 					<input type="text" class="form-control" name="phone" id="phone">
 				</div>
 
+<<<<<<< HEAD
 
 	          <div class="text-center">
 	            <button class="btn btn-primary" name="register">Register</button>
@@ -60,6 +61,14 @@
     	</div>
 
 
+=======
+				<div class="text-center">
+					<button class="btn btn-primary" name="register">Register</button>
+					<br><br><a href="<?php echo base_url(); ?>/authCont/login">Login</a><hr>
+				</div>
+			</form>
+    </div>
+>>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
 
   </div>
 </div>

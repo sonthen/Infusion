@@ -9,7 +9,7 @@
 
           	Hello, <?php echo $_SESSION['username']; ?> <br><!-- this is for print the username in the page view -->
 
-          	<a href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a>
+          	<a href="<?php echo base_url(); ?> /authCont/logout">Logout</a>
           	<br><hr>
 		</div>
 

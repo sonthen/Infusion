@@ -22,7 +22,7 @@
 
 
   <div class="container-fluid">
-    <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
+    <a href="<?php echo base_url(); ?>userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="berborder" >
@@ -51,14 +51,14 @@
                             </select>
                         </div>
 
-                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data"> -->
+                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?> userCont/edit_data"> -->
                             <button  class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>Next</button></a>
                         <!-- </div><hr> -->
-                        <a href="<?php echo base_url('index.php/usercont/delete/'.$this->uri->segment(3)); ?>">
+                        <a href="<?php echo base_url(' userCont/delete/'.$this->uri->segment(3)); ?>">
                             <button type='button' class='btn btn-status  btn-danger'>Delete</button>
                         </a>
 
-                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/delete">
+                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?> userCont/delete">
                             <button  class="btn btn-danger" ><?php form_submit ('SUBMIT', '')?>Delete</button></a>
                         </div><hr> -->
                     </form>

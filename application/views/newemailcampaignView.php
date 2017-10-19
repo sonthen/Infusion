@@ -21,7 +21,7 @@
 
 
   <div class="container-fluid">
-    <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
+    <a href="<?php echo base_url(); ?>userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h1>EMAIL</h1>
@@ -66,13 +66,15 @@
                         <div class="text-right">
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </div><hr>             
 
                         
 =======
+=======
+>>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
                         </div><hr>
 
->>>>>>> aee3d0c0e7ed5189579ec28e77f8d54eee3ffb93
                     </form>
 
                     <?php echo form_close();?>
@@ -82,10 +84,6 @@
 
   </div>
 
-<<<<<<< HEAD
-  <?php echo
-=======
->>>>>>> aee3d0c0e7ed5189579ec28e77f8d54eee3ffb93
 
   <?php echo form_close(); ?>
 <?php $this->load->view('footer'); ?>
