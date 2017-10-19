@@ -18,9 +18,7 @@
 <?php $this->load->view('header'); ?>
 
 <?php echo form_open('userCont/edit_data'); ?>
-<?php echo
-form_hidden('id', $this->uri->segment(3));
- ?>
+<?php echo form_hidden('id', $this->uri->segment(3)); ?>
 
 
   <div class="container-fluid">
@@ -53,13 +51,16 @@ form_hidden('id', $this->uri->segment(3));
                             </select>
                         </div>
 
-                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data">
+                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/edit_data"> -->
                             <button  class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>Next</button></a>
-                        </div><hr>
+                        <!-- </div><hr> -->
+                        <a href="<?php echo base_url('index.php/usercont/delete/'.$this->uri->segment(3)); ?>">
+                            <button type='button' class='btn btn-status  btn-danger'>Delete</button>
+                        </a>
 
-                        <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/delete">
+                        <!-- <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/delete">
                             <button  class="btn btn-danger" ><?php form_submit ('SUBMIT', '')?>Delete</button></a>
-                        </div><hr>
+                        </div><hr> -->
                     </form>
 
                 </div>
@@ -68,9 +69,6 @@ form_hidden('id', $this->uri->segment(3));
 
   </div>
 
-  <?php echo
-
-form_close();
-(''); ?>
+  <?php echo form_close(); ?>
 
 <?php $this->load->view('footer'); ?>
