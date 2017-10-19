@@ -78,11 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD
-	'database' => 'infusion_bersama', 
-=======
 	'database' => 'infusion_korban', //fill with thename at database
->>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

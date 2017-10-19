@@ -1,5 +1,3 @@
-
-
 <style>
 .loginform{
       border: 2px solid #ede8e8;

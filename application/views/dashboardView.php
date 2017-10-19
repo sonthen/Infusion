@@ -10,17 +10,11 @@
 
 
 <?php $this->load->view('header'); ?>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
 <?php $this->load->view('navbar');?>
 
 <!-- navbar end -->
       
-=======
->>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
->>>>>>> 617482d7f3c32b21c82f73ab99f83870717962ff
 <div class="container-fluid">
   <div class="bkg row">
 
