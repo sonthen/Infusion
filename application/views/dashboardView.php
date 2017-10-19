@@ -41,11 +41,11 @@
                     <div class="box1 col-md-offset-1 col-md-9">
                         <div class="box-label">
                             <span>SEQ :</span>
-                            <span> 3 </span>
+                            <span> 300 </span>
                             <span class="blue-line"></span>
                             <span><?php echo $e->label_name ?></span>
                             <span class="blue-line"></span>
-                            <span>13/10/2017</span>
+                            <span> <?php echo $e->created_at ?> </span>
                         </div>
 
                       <?php if($e->status==0){ ?>
@@ -58,9 +58,10 @@
 
                         <?php } else { ?>
                       <span class="btn-indikator">
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
-                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
                           <a href="">
+                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
+                        
+                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
                       </span>
                       <?php } ?>
@@ -102,9 +103,9 @@
 
                         <?php } else { ?>
                       <span class="btn-indikator">
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
-                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
                           <a href="">
+                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
+                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
                       </span>
                       <?php } ?>
