@@ -16,10 +16,6 @@
             <div class="row">
                 <div class="col-md-offset-1 col-md-11 email-title">
                     <p class="email-text">Email</p>
-                    <div>
-                        <span>  <a href="<?php echo base_url(); ?>index.php/userCont/addEmailCampaign">
-                        <button type="button" class="w3-button w3-xlarge w3-circle btn-plus ">+</button></a></span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -28,7 +24,7 @@
               <div class="row">
                   <div class="col-md-offset-1 col-md-11">
                       <h3 class="sms-text">SMS</h3>
-                      <span><a href="<?php echo base_url(); ?>index.php/userCont/addSmsCampaign"><button type="button" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></a></span>
+                        <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
                   </div>
               </div>
           </div>
@@ -125,6 +121,22 @@
 
  </div>
 </div>
+
+<div class="w3-container modal1">
+          <div id="id01" class="w3-modal  w3-animate-opacity">
+              <div class="w3-modal-content w3-card-4">
+                  <header class="w3-container w3-teal modal-campaign modal1">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+                      <h2>Create Campaign</h2>
+                  </header>
+                  <div class="w3-container modal1">
+                      <p class="modal-text">Title Campaign</p>
+                      <input type="text" class="input-campaign">
+                      <button type="button" class="btn-create-campaign btn">Create</button>
+                  </div>
+              </div>
+          </div>
+    </div>
 
 
 
