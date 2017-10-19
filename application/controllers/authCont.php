@@ -10,8 +10,8 @@ class authCont extends CI_Controller {
 	}
 	
 	public function login(){
-		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]'); //password should has more than 5 character
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]'); //password should has more than 5 character
 
 		//check for validation
 		if ($this->form_validation->run() == TRUE){

@@ -8,7 +8,6 @@
 
 
 <?php $this->load->view('header'); ?>
-      <!-- <a class="logout-btn" href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a> -->
 <div class="container-fluid">
   <div class="bkg row">
 
@@ -41,12 +40,12 @@
                             <span class="blue-line"></span>
                             <span><?php echo $e->label_name ?></span>
                             <span class="blue-line"></span>
-                            <span>13/10/2017</span>
+                            <span><?php echo $e->created_at ?></span>
                         </div>
 
                       <?php if($e->status==0){ ?>
                       <span class="btn-indikator">
-                        <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
+                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
                         <a href="">
                         <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button></a>
@@ -54,7 +53,7 @@
 
                         <?php } else { ?>
                       <span class="btn-indikator">
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
+                          <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
                           <a href="">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
@@ -62,7 +61,7 @@
                       <?php } ?>
 
                       <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                      <a href="<?php echo base_url('index.php/usercont/edit/'.$e->id); ?>">
+                      <a href="<?php echo base_url('userCont/edit/'.$e->id); ?>">
                       <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
                       <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </div>
@@ -90,7 +89,7 @@
 
                       <?php if($e->status==0){ ?>
                       <span class="btn-indikator">
-                        <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
+                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
                         <a href="">
                         <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button></a>
@@ -98,7 +97,7 @@
 
                         <?php } else { ?>
                       <span class="btn-indikator">
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->status); ?>">
+                          <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->status); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button></a>
                           <a href="">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
@@ -106,7 +105,7 @@
                       <?php } ?>
 
                       <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                      <a href="<?php echo base_url('index.php/usercont/edit/'.$e->id); ?>">
+                      <a href="<?php echo base_url('userCont/edit/'.$e->id); ?>">
                       <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
                       <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </div>
