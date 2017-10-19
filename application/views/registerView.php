@@ -52,7 +52,7 @@
 
 				<div class="text-center">
 					<button class="btn btn-primary" name="register">Register</button>
-					<br><br><a href="<?php echo base_url(); ?>index.php/authCont/login">Login</a><hr>
+					<br><br><a href="<?php echo base_url(); ?>/authCont/login">Login</a><hr>
 				</div>
 			</form>
     </div>
