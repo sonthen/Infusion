@@ -20,7 +20,7 @@
 
 
   <div class="container-fluid"> 
-    <a href="<?php echo base_url(); ?>index.php/userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
+    <a href="<?php echo base_url(); ?>userCont/dashboardview"><button type="button" class="btn btn-default navbar-btn">Back</button></a>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
             <h1>SMS</h1>
