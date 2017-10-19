@@ -12,25 +12,6 @@
 <div class="container-fluid">
   <div class="bkg row">
 
-<<<<<<< HEAD
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>
-                                <a href="<?php echo base_url(); ?>index.php/userCont/addEmailCampaign">
-                                <button type="button" class="btn btn-status btn-primary">New Email Campaign</button>Email
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3><a href="<?php echo base_url(); ?>index.php/userCont/addSmsCampaign">
-                            <button type="button" class="btn btn-status btn-primary">New SMS Campaign</button>SMS</h3></a>
-                        </div>
-=======
           <div class="col-md-5">
             <div class="row">
                 <div class="col-md-offset-1 col-md-11 email-title">
@@ -38,7 +19,6 @@
                     <div>
                         <span>  <a href="<?php echo base_url(); ?>index.php/userCont/addEmailCampaign">
                         <button type="button" class="w3-button w3-xlarge w3-circle btn-plus ">+</button></a></span>
->>>>>>> aee3d0c0e7ed5189579ec28e77f8d54eee3ffb93
                     </div>
                 </div>
             </div>
@@ -65,7 +45,7 @@
                             <span class="blue-line"></span>
                             <span><?php echo $e->label_name ?></span>
                             <span class="blue-line"></span>
-                            <span>13/10/2017</span>
+                            <span><?php echo $e->created_at ?></span>
                         </div>
 
                       <?php if($e->status==0){ ?>
