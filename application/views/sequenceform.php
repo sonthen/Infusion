@@ -12,7 +12,7 @@
 
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-
+<?php $this->load->view('navbar');?>
   <div class="container-fluid"><a href="<?php echo base_url('index.php/userCont/dashboardview'); ?>">
     <button type="button" class="btn btn-default navbar-btn">Back to Dashboard</button></a>
 <div class="row">

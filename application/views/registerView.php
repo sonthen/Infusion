@@ -1,6 +1,6 @@
 												<!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-
+<?php $this->load->view('navbar');?>
 <div class="container-fluid">
 	<div class="row">
 
@@ -50,7 +50,7 @@
 					<input type="text" class="form-control" name="phone" id="phone">
 				</div>
 
-<<<<<<< HEAD
+
 	          <div class="text-center">
 	            <button class="btn btn-primary" name="register">Register</button>
 							
@@ -58,14 +58,8 @@
 	          </div>
 	        </form>
     	</div>
-=======
-				<div class="text-center">
-					<button class="btn btn-primary" name="register">Register</button>
-					<br><br><a href="<?php echo base_url(); ?>index.php/authCont/login">Login</a><hr>
-				</div>
-			</form>
-    </div>
->>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0
+
+
 
   </div>
 </div>

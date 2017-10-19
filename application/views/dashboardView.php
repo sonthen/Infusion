@@ -1,3 +1,5 @@
+<head>
+</head>
 <style media="screen">
 
 
@@ -30,7 +32,10 @@
 
 
 <?php $this->load->view('header'); ?>
-      <a class="logout-btn" href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a>
+<?php $this->load->view('navbar');?>
+
+<!-- navbar end -->
+      
 <div class="container-fluid">
             <div class="row">
 
@@ -133,6 +138,7 @@
 
 
 
+                
 
 
 

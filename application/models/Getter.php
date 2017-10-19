@@ -26,7 +26,7 @@ class Getter extends CI_Model{
         );
         return $query->result();
     }
-<<<<<<< HEAD
+
 //testing D
     function get_cobakirim()
     {
@@ -34,17 +34,8 @@ class Getter extends CI_Model{
         
         return $query->result_array();
     }
-    function get_lomtopup()
-    {
-        $query = $this->db->query("SELECT * FROM `iseng_kcp` WHERE topup_date <= NOW() + INTERVAL 30 DAY");
-                
+  
 
-        return $query->result();
-    }
-    
-}
-=======
->>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0
 
     function edit_campaign($id) {
 
@@ -80,8 +71,4 @@ class Getter extends CI_Model{
         return $query->result_array() ;
     }
 
-
-<<<<<<< HEAD
-=======
 }
->>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0

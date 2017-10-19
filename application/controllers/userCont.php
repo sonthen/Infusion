@@ -31,8 +31,7 @@ class userCont extends CI_Controller {
         }
 
 
-<<<<<<< HEAD
-        }
+        
         
         // public function danieltest()
         // {
@@ -43,13 +42,13 @@ class userCont extends CI_Controller {
 
 
        
-=======
+
         public function addSmsCampaign(){
             if (isset($_POST['addSmsCampaign'])){
                 $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
                 $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
                 $this->form_validation->set_rules('label_id', 'label id', 'required');
->>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0
+
 
                             //if form validation true
                 if ($this->form_validation->run() == TRUE){

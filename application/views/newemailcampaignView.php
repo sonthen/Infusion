@@ -16,7 +16,7 @@
 
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-
+<?php $this->load->view('navbar');?>
 <?php echo form_open('userCont/addEmailCampaign'); ?>
 
 
@@ -55,18 +55,18 @@
                                     "<option value='$e->id;'>".$e->label_name."</option>";
                                 } ?>
                             </select>
-<<<<<<< HEAD
+
                         </div>
 
                         <div class="text-right"><a href="<?php echo base_url(); ?>index.php/userCont/campaignregist">
                             <button type="button" class="btn btn-primary" name="campaignregist"><?php form_submit ('SUBMIT', '')?>next</button></a>
                         </div><hr>  
-=======
+
 
                         <div class="text-right">
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
                         </div><hr>             
->>>>>>> a033a260e641d3f178ac3d3e114949e57c7149c0
+
                         
                     </form>
 

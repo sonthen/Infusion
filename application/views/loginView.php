@@ -1,3 +1,5 @@
+
+
 <style>
 .loginform{
       border: 2px solid #ede8e8;
@@ -33,34 +35,36 @@
     
     
     .btn {
-  font-size: 4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1ab188;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-  }
-  .btn:hover, .btn:focus {
-    background: #179b77;
-  }
-  #username{
-    background:#ede8e8;
-    height:40px;
-  }
-  #password{
-    background:#ede8e8;
-    height:40px;
-  }
-  .formnya{
-    padding: 8% 1px 0 20%;
-    left:7%;
-  }
+    font-size: 4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    }
+    .btn:hover, .btn:focus {
+      background: #179b77;
+    }
+    #username{
+      background:#ede8e8;
+      height:40px;
+    }
+    #password{
+      background:#ede8e8;
+      height:40px;
+    }
+    .formnya{
+      padding: 8% 1px 0 20%;
+      left:7%;
+      top:36%;
+    }
 </style>
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
+
 
   <div class="container-fluid">
     <div class="row">    
@@ -109,4 +113,4 @@
   </div>
 
 <!-- this is for load footer template -->
-<?php $this->load->view('footer'); ?>
+

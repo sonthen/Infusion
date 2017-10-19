@@ -26,19 +26,6 @@ class smtpemailCont extends CI_Controller {
     
     
 
-    //    $kkk = $k->email;
-    
-        //  $subject = 'subject'=>$_POST['subject'];
-        //  $data = 
-        //  [
-        //     'subject' =>$this->input->post('subject'),
-        //     'body'=>$this->input->post('body'),
-        //  ];
-
-            //  'subject'=>$_POST['subject'],
-            
-         
-        //  $this->db->select('iseng_kcp', $data);
         
             $subject=$_POST["subject"];
             $body=$_POST["body"];
