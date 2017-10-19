@@ -1,0 +1,195 @@
+.box1
+{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    background-color: #fdfdfd;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    animation-name: box1;
+    animation-duration: 1.5s;
+}
+
+
+.label-kcp
+{
+    border-radius: 6px;
+    border: 1px solid black;
+    text-align: center;
+    position: relative;
+    font-size: 15px;
+    margin-top: 5px;
+    width: 35%;
+    left: 6%;
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.title-campaign
+{
+    border: 2px solid rgba(255, 168, 114, 0.66);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bolder;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+.btn-edit
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    width: 30%;
+    margin-left: 11%;
+    border-radius: 6px;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    background-color: rgba(248, 133, 18, 0.68);
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.btn-sequences
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    width: 30%;
+    margin-left: 11%;
+    border-radius: 6px;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    background-color: rgba(248, 133, 18, 0.68);
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.bkg {
+background: #fcdfa6;
+background: -moz-linear-gradient(left,  #fcdfa6 0%, #ffbe7d 50%, #ffb168 100%);
+background: -webkit-linear-gradient(left,  #fcdfa6 0%,#ffbe7d 50%,#ffb168 100%);
+background: linear-gradient(to right,  #fcdfa6 0%,#ffbe7d 50%,#ffb168 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcdfa6', endColorstr='#ffb168',GradientType=1 );
+
+    width:100%
+
+}
+
+.btn-indikator
+{
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    margin-top: 5px;
+    margin-right: 10px;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+}
+
+.btn-on
+{
+    background-color: #55E221;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.btn-off
+{
+    background-color: #E31010;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.box-label
+{
+    border: 1px solid transparent;
+    width: 100%;
+    text-align: center;
+    margin: 30px auto 20px;
+    font-size: 12px;
+}
+
+.blue-line
+{
+    border-right: 3px solid rgba(255, 168, 114, 0.96);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.email-title
+{
+    position: absolute;
+}
+
+.email-text
+{
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+}
+
+.sms-text
+{
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 8px;
+}
+
+.btn-plus
+{
+    float: right;
+    position: relative;
+    bottom: 46px;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.25);
+    color: rgba(251, 132, 13, 0.66);
+    background-color: #fdf7f7;
+}
+
+.btn-plus2
+{
+    float: right;
+    position: relative;
+    bottom: 40px;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.25);
+    color: rgba(251, 132, 13, 0.66);
+    background-color: #fdf7f7;
+}
+
+.btn-plus:hover
+{
+    background-color: rgba(251, 132, 13, 0.66)!important;
+    color: #fff!important;
+}
+
+.btn-plus2:hover
+{
+    background-color: rgba(251, 132, 13, 0.66)!important;
+    color: #fff!important;
+}
+
+
+@keyframes box1 {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+
+  }
+}
