@@ -15,11 +15,7 @@ class userCont extends CI_Controller {
 
     //to get dashboard after user login
 		public function dashboardview() {
-            if ($_SESSION['user_logged'] == FALSE){
-                $this->session->set_flashdata("error", "Please login first to view this page!! ");
-                redirect("authCont/login");
-            }
-
+            
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
             

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ab1aba25b518b9f4236b7fcf5f1b7115fff859b0
 
 <!-- begin #page-loader -->
   <div id="page-loader" class="fade in"><span class="spinner"></span></div>
