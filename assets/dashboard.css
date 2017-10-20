@@ -38,7 +38,7 @@
     margin-bottom: 20px;
 }
 
-.btn-edit
+/*.btn-edit
 {
     position: relative;
     display: inline-block;
@@ -51,21 +51,20 @@
     border: 1px solid transparent;
     color: #ffffff;
     font-size: 14px;
-}
+}*/
 
 .btn-sequences
 {
-    position: relative;
-    display: inline-block;
-    margin-right: 30px;
     width: 30%;
-    margin-left: 11%;
     border-radius: 6px;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
     background-color: rgba(248, 133, 18, 0.68);
     border: 1px solid transparent;
     color: #ffffff;
     font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .bkg {

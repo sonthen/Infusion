@@ -1,12 +1,8 @@
-<head>
-<link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet" />
-</head>
 
 <!-- begin #page-loader -->
   <div id="page-loader" class="fade in"><span class="spinner"></span></div>
   <!-- end #page-loader -->
-  
+
   <!-- begin #page-container -->
   <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
     <!-- begin #header -->
@@ -23,7 +19,7 @@
           </button>
         </div>
         <!-- end mobile sidebar expand / collapse button -->
-        
+
         <!-- begin header navigation right -->
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -60,18 +56,18 @@
                                     </div>
                                 </a>
                             </li>
-                           
+
             </ul>
           </li>
           <li class="dropdown navbar-user">
             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url();?>assets/user-9.jpg" alt="" /> 
+              <img src="<?php echo base_url();?>assets/user-9.jpg" alt="" />
               <span class="hidden-xs">Ryan Henry</span> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu animated fadeInLeft">
               <li class="arrow"></li>
               <li><a class="logout-btn" href="<?php echo base_url(); ?>index.php/authCont/logout">Logout</a></li>
-              
+
             </ul>
           </li>
         </ul>
@@ -80,21 +76,21 @@
       <!-- end container-fluid -->
     </div>
     <!-- end #header -->
-    
+
     <!-- begin #sidebar -->
-    
+
         </div>
         <!-- end theme-panel -->
-    
+
     <!-- begin scroll to top btn -->
     <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
     <!-- end scroll to top btn -->
   </div>
   <!-- end page container -->
 
-   
+
   <!-- ================== END PAGE LEVEL JS ================== -->
-  
+
   <script>
     $(document).ready(function() {
       App.init();
