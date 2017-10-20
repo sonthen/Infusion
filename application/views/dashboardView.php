@@ -14,26 +14,18 @@
 <?php $this->load->view('navbar');?>
 
 <!-- navbar end -->
-      
+
 <div class="container-fluid">
   <div class="bkg row">
 
-          <div class="col-md-5">
-            <div class="row">
-              <div class="col-md-offset-1 col-md-11 email-title">
-                  <p class="email-text">Email</p>
+    <div class="col-md-11">
+          <div class="row">
+              <div class="col-md-offset-1 col-md-11 w3-container">
+                  <h3 class="sms-text text-center">CAMPAIGN BOARD</h3>
+                  <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
               </div>
-            </div>
           </div>
-
-          <div class="col-md-5 col-md-offset-1">
-            <div class="row">
-              <div class="col-md-offset-1 col-md-11">
-                <h3 class="sms-text">SMS</h3>
-                <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
-              </div>
-            </div>
-          </div>
+      </div>
 
           <?php foreach( $dashboard_content as $e) {?>
             <div class="col-md-6">
@@ -48,19 +40,18 @@
                         <span> <?php echo $e->created_at ?> </span>
                     </div>
 
-                    
+
                       <span class="btn-indikator">
-                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->stat); ?>">
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
-                        
+                      <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
+                        <button type="button" class="btn btn-default btn-xs btn-on">On</button>
+                      </a>
+
                         <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
                       </span>
 
-                
+
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                                        
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
                     <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                   </div>
                  <?php } ?>
@@ -76,24 +67,22 @@
                         <span> <?php echo $e->created_at ?> </span>
                     </div>
 
-                    
+
                       <span class="btn-indikator">
-                          
+
                           <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button>
-                        
+
                           <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
                       </span>
-                    
+
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                                        
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
                     <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                   </div>
                  <?php } ?>
 
-                
+
 
                 </div>
               </div>

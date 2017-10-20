@@ -8,12 +8,25 @@
     <title>Login Page</title>
 
     <!-- Bootstrap -->
+
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
+
+    <link href="<?php echo base_url(); ?>assets/style.css" rel="stylesheet" />
+
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
+
+
     <link href="<?php echo base_url(); ?>assets/w3.css" rel="stylesheet">
 
-    
+
+
     <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet">
+    
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet" />
+
+
+
 
 
     <!-- Optional theme -->
