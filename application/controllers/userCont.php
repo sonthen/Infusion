@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class userCont extends CI_Controller {
 
-	//set as default
+	//set as default to check user login for see the page view
 	public function __construct(){
 
         parent::__construct();

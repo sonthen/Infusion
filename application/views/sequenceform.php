@@ -12,13 +12,8 @@
 
 <!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-<<<<<<< HEAD
-<?php $this->load->view('navbar');?>
-  <div class="container-fluid"><a href="<?php echo base_url('index.php/userCont/dashboardview'); ?>">
-=======
 
   <div class="container-fluid"><a href="<?php echo base_url('userCont/dashboardview'); ?>">
->>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
     <button type="button" class="btn btn-default navbar-btn">Back to Dashboard</button></a>
 <div class="row">
     <div class="col-md-12">

@@ -1,6 +1,6 @@
 												<!-- this is for load header template -->
 <?php $this->load->view('header'); ?>
-<?php $this->load->view('navbar');?>
+
 <div class="container-fluid">
 	<div class="row">
 
