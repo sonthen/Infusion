@@ -1,7 +1,4 @@
-<head>
-<link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet" />
-</head>
+
 
 <!-- begin #page-loader -->
   <div id="page-loader" class="fade in"><span class="spinner"></span></div>

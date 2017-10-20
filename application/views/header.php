@@ -14,6 +14,10 @@
 
     
     <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet">
+    
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet" />
+
 
 
     <!-- Optional theme -->

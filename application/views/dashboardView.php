@@ -48,20 +48,21 @@
                         <span> <?php echo $e->created_at ?> </span>
                     </div>
 
-                    
-                      <span class="btn-indikator">
-                        <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->stat); ?>">
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
-                        
-                        <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
-                      </span>
-
-                
+                    <span class="btn-indikator">
+                      <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->stat); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
+                      
+                      <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
+                    </span>
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                                        
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+
+                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button>
+                 
+                    <a href="<?php echo base_url('userCont/sequenceform'); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    </a>
+
                   </div>
                  <?php } ?>
 
@@ -88,8 +89,10 @@
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
                                         
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button></a>
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button>
+                    <a href="<?php echo base_url('userCont/sequenceform'); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    </a>
                   </div>
                  <?php } ?>
 

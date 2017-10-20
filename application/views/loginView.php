@@ -1,5 +1,7 @@
 <style>
 .loginform{
+      position: relative;
+      top:50px;
       border: 2px solid #ede8e8;
       padding: 20px;
 
@@ -70,43 +72,41 @@
       <div class="formnya col-md-6 col-md-offset-3">
         
 
-        <!-- alert for handle success registration -->
-        <?php if(isset($_SESSION['success'])){ ?>
-          <div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
-        <?php
-        } ?>
+        
+        <div class="loginform"> 
+          <!-- alert for handle success registration -->
+          <?php if(isset($_SESSION['success'])){ ?>
+            <div class="alert alert-success"> <?php echo $_SESSION['success']; ?></div>
+          <?php } ?>
 
-        <!-- alert for handle error registration -->
-        <?php if(isset($_SESSION['error'])){ ?>
-          <div class="alert alert-danger"> <?php echo $_SESSION['error']; ?></div>
-        <?php
-        } ?>
+          <!-- alert for handle error registration -->
+          <?php if(isset($_SESSION['error'])){ ?>
+            <div class="alert alert-danger"> <?php echo $_SESSION['error']; ?></div>
+          <?php } ?>
 
-        <!-- alert for handle empty form -->
-        <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
-             <div class="loginform"> 
-                <form action="" method="POST">
-                  <div class="form-group left-addon">
-                    <!-- <label for="username" > </label> -->
-                    <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
-                    
-                  </div>
+          <!-- alert for handle empty form -->
+          <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+
+          <form action="" method="POST">
+            <div class="form-group left-addon">
+              <!-- <label for="username" > </label> -->
+              <i class="glyphicon glyphicon-user"></i>
+              <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            </div>
                   
+            <div class="form-group left-addon">
+              <!-- <label for="password" ></label> -->
+              <i class="glyphicon glyphicon-lock"></i>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" >
+            </div>
 
-                  <div class="form-group left-addon">
-                    <!-- <label for="password" ></label> -->
-                    <i class="glyphicon glyphicon-lock"></i>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" >
-                  </div>
+            <div class="text-center">
+              <button class="btn btn-primary" name="login">Login</button>
+            </div><hr>
+            <p class="text-center">Not registered? <?php echo anchor('authCont/register', 'Sign Up Here'); ?></p>  
 
-                  <div class="text-center">
-                    <button class="btn btn-primary" name="login">Login</button>
-                  </div>
-                  <hr>
-                    <p class="text-center">Not registered? <?php echo anchor('authCont/register', 'Sign Up Here'); ?></p>     
-                </form>
-             </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
