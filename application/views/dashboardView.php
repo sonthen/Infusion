@@ -52,7 +52,10 @@
 
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    
+                    <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
+                        <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    </a>
                   </div>
                  <?php } ?>
 
@@ -78,7 +81,9 @@
 
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    </a>
                   </div>
                  <?php } ?>
 
@@ -107,26 +112,6 @@
 
           <a href="<?php echo base_url('usercont/addEmailCampaign'); ?>">
           <button class="btn-create-campaign btn" name="addEmailCampaign">Create</button></a>
-        </div>
-      </div>
-    </div>
-  <?php echo form_close(); ?>
-</div>
-
-<div class="w3-container modal1">
-  <?php echo form_open('userCont/edit_data'); ?>
-  <?php echo form_hidden('id', $this->uri->segment(3)); ?>
-    <div id="id02" class="w3-modal  w3-animate-opacity">
-      <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-teal modal-campaign modal1">
-          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
-          <h2>Create Campaign</h2>
-        </header>
-        <div class="w3-container modal1">
-          <p class="modal-text">Title Campaign</p>
-          <?php echo form_input('campaign_name', $campaign[0]["campaign_name"], ["type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
-
-          <button  class="btn btn-primary" ><?php form_submit ('SUBMIT', '')?>change</button>
         </div>
       </div>
     </div>

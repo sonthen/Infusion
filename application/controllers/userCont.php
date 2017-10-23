@@ -27,6 +27,25 @@ class userCont extends CI_Controller {
             $this->load->view('sequenceform');
         }
 
+        function addSequence(){
+            $this->load->view('sequenceform');
+            $id= $this->input->post('id');
+
+            $newsequence = [
+                'campaign_id' =>$id,
+                'label_id' =>$_POST['label'],
+                'delay' =>$_POST['delay'],
+                'value_1'=>$_POST['subject'],
+                'value_2' =>$_POST['body'],
+            ];
+
+              $this->db->insert('sequences', $newsequence);
+              redirect('userCont/mencoba','refresh');
+
+        }
+
+        
+
 
         
         
@@ -165,5 +184,13 @@ class userCont extends CI_Controller {
 
 
         ##################### batas coba-coba ######################
+        function Mencoba(){
+            $this->load->model('Getter');
+            $id = $this->uri->segment(3);
+            $data['campaign'] = $this->Getter->edit_campaign($id);
+            $data['label_content'] = $this->Getter->get_label();
+            $this->load->view('viewmencoba', $data);
+
+        }
 
 }
