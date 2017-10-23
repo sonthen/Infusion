@@ -4,9 +4,12 @@
     <div class="row">
         <!-- Navigasi Sequence Form -->
         <div class="col-md-offset-2 col-md-8">
+        <?php echo form_open('userCont/edit_campaign'); ?>
+        <?php echo form_hidden('id', $this->uri->segment(3)); ?>
             <h3 class="text-campagin-name">Campaign Name :</h3>
             <?php echo form_input('campaign_name', $campaign[0]["campaign_name"], ["type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
-            <button type="button" onclick="document.getElementById('seq-bsr').style.display='block'"  class="btn btn-default btn-seq-besar-plus">+</button>
+            <button class="btn btn-default btn-seq-besar-plus" name="edit_campaign">+</button>
+            <?php echo form_close(); ?>
         </div>
 
         <div class="col-md-12">

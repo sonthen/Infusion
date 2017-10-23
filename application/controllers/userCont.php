@@ -40,7 +40,7 @@ class userCont extends CI_Controller {
             ];
 
               $this->db->insert('sequences', $newsequence);
-              redirect('userCont/mencoba','refresh');
+              redirect('userCont/mencoba/'.$id,'refresh');
 
         }
 
@@ -185,12 +185,26 @@ class userCont extends CI_Controller {
 
         ##################### batas coba-coba ######################
         function Mencoba(){
-            $this->load->model('Getter');
+            // $this->load->model('Getter');
             $id = $this->uri->segment(3);
-            $data['campaign'] = $this->Getter->edit_campaign($id);
+            // $data['campaign'] = $this->Getter->edit_campaign($id);
             $data['label_content'] = $this->Getter->get_label();
             $this->load->view('viewmencoba', $data);
 
+        }
+
+        public function edit_campaign(){
+            $id= $this->input->post('id');
+            
+                $newcampaign = [
+                            
+                            'campaign_name' =>$_POST['campaign_name'],
+                        ];
+            
+                $this->db->where('id',$id);
+                $this->db->update('campaigns',$newcampaign);
+            
+                redirect("usercont/dashboardview");
         }
 
 }
