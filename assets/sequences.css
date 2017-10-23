@@ -1,0 +1,99 @@
+
+
+.text-campagin-name
+{
+    display: inline-block;
+}
+
+.input-campaign-name
+{
+    display: inline-block;
+}
+
+.box-seq-besar
+{
+    border: 1px solid black;
+}
+
+.box-seq-child
+{
+    border: 1px solid black;
+    padding-top: 10px;
+}
+
+.box-seq-status
+{
+    float: right;
+}
+
+.text-nama-seq
+{
+    display: inline;
+    margin-right: 10px;
+}
+
+.btn-seq-email
+{
+    float: right;
+}
+
+.btn-seq-sms
+{
+    float: right;
+}
+
+.text-seq-delay
+{
+    margin-top: 10px;
+    width: 13%;
+    border: 1px solid grey;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.text-seq-subject
+{
+    font-size: 18px;
+}
+
+.text-seq-body
+{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.btn-seq-delete
+{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-seq-sent
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.btn-seq-dropdown
+{
+}
+
+.text-seq-stage
+{
+    display: block;
+    float: right;
+    margin-top: 0px;
+}
+
+.btn-seq-besar-plus
+{
+    display: inline;
+}
+
+.btn-plus-seq-besar
+{
+    float: right;
+}
+
