@@ -42,7 +42,6 @@
 
 
                       <span class="btn-indikator">
-<<<<<<< HEAD
                       <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button>
                       </a>
@@ -87,7 +86,6 @@
                     <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
                       <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
->>>>>>> parent of b941b3e... c
                   </div>
                  <?php } ?>
 
