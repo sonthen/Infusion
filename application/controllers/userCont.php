@@ -49,8 +49,12 @@ class userCont extends CI_Controller {
                 'value_2' =>$_POST['value_2']
             ];
 
-            $this->db->insert('sequences', $newsequence);
-            redirect('userCont/mencoba/'.$id_campaign);
+              $this->db->insert('sequences', $newsequence);
+<<<<<<< HEAD
+              redirect('userCont/mencoba/'.$id_campaign);
+=======
+              redirect('userCont/mencoba/'.$id,'refresh');
+>>>>>>> e37da979aac2b15611296dc03cbbb4ab4195aba3
 
         }
         function edit_sequence(){
@@ -140,12 +144,30 @@ class userCont extends CI_Controller {
         function Mencoba(){
             // $this->load->model('Getter');
             $id = $this->uri->segment(3);
+<<<<<<< HEAD
             $data['sequence_container'] = $this->Getter->get_sequence_container_content($id);
             $data['sequence_content'] = $this->Getter->get_sequence_content();
             $data['campaign'] = $this->Getter->edit_campaign($id);
+=======
+            // $data['campaign'] = $this->Getter->edit_campaign($id);
+>>>>>>> e37da979aac2b15611296dc03cbbb4ab4195aba3
             $data['label_content'] = $this->Getter->get_label();
             $this->load->view('viewmencoba', $data);
 
+        }
+
+        public function edit_campaign(){
+            $id= $this->input->post('id');
+            
+                $newcampaign = [
+                            
+                            'campaign_name' =>$_POST['campaign_name'],
+                        ];
+            
+                $this->db->where('id',$id);
+                $this->db->update('campaigns',$newcampaign);
+            
+                redirect("usercont/dashboardview");
         }
 
 }

@@ -3,10 +3,21 @@
 
 <div>
     <div class="row">
+<<<<<<< HEAD
         <div class="col-md-1 btn-back">
             <a href="<?php echo base_url('index.php/usercont/dashboardview'); ?>">
                 <button type="button" class="btn btn-default">Back to Dashboard</button>
             </a>
+=======
+        <!-- Navigasi Sequence Form -->
+        <div class="col-md-offset-2 col-md-8">
+        <?php echo form_open('userCont/edit_campaign'); ?>
+        <?php echo form_hidden('id', $this->uri->segment(3)); ?>
+            <h3 class="text-campagin-name">Campaign Name :</h3>
+            <?php echo form_input('campaign_name', $campaign[0]["campaign_name"], ["type" => "text",'placeholder'=>'campaign_name', "class" => "form-control"]); ?>
+            <button class="btn btn-default btn-seq-besar-plus" name="edit_campaign">+</button>
+            <?php echo form_close(); ?>
+>>>>>>> e37da979aac2b15611296dc03cbbb4ab4195aba3
         </div>
     <!-- Navigasi Sequence Form -->
         <?php echo form_open('userCont/edit_campaign'); ?>
