@@ -10,6 +10,22 @@ class Getter extends CI_Model{
         return $query->result();
     }
 
+    function get_sequence_container_content($id) {
+        
+        $query = $this->db->query("SELECT id, sequence_container_name, container_parent_id, lvl, campaign_id, label_id, stat
+        FROM `sequence_container` 
+        WHERE campaign_id = $id"
+        );
+        return $query->result_array() ;
+    }
+
+    function get_sequence_content() {
+        
+        $query = $this->db->query("SELECT id, sequence_name, sequence_type, parent_id, container_id, delay, value_1, value_2, container_id
+        FROM `sequences`"
+        );
+        return $query->result_array() ;
+    }
 
 // untuk dapatkan 1 baris data campaign (pasangan edit campaign)
     function get_campaign($id)
@@ -26,17 +42,8 @@ class Getter extends CI_Model{
         return $query->result();
     }
 
-//testing D
-    function get_cobakirim()
-    {
-        $query = $this->db->query("SELECT email FROM `users`");
-        
-        return $query->result_array();
-    }
-  
-
-
     function edit_campaign($id) {
+        $id = $this->uri->segment(3);        
 
         $query = $this->db->query("SELECT id, campaign_name
         FROM `campaigns` 
@@ -56,17 +63,16 @@ class Getter extends CI_Model{
                                     LEFT JOIN seq_action_param sap  
                                         ON sa.id = sap.sequence_act_ID"
                                     );
-        return $query->result_array() ;
     }
 
-    function get_sequence($id) {
+    function delete_sequence($id) {
         
-        $query = $this->db->query("SELECT c.id, c.sequence_qty, c.campaign_name, l.label_name
-        FROM `campaigns` c
-        LEFT JOIN labels l ON c.label_id = l.id
-        WHERE c.id = $id"
-        );
-        return $query->result_array() ;
+        $query = $this->db->query("DELETE FROM `sequences` 
+                                    WHERE `sequences`.`id` = $id"
+                                    );
+        
     }
+
+    
 
 }

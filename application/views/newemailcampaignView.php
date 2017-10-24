@@ -65,14 +65,6 @@
 
                         <div class="text-right">
                             <button class="btn btn-primary" name="addEmailCampaign">next</button></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        </div><hr>             
-
-                        
-=======
-=======
->>>>>>> d6eac952847a606a2a940f002f08656f2e7b3bc4
                         </div><hr>
 
                     </form>

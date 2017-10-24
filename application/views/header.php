@@ -7,13 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login Page</title>
 
+    <!-- untuk editor -->
+    <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <!-- Bootstrap -->
 
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>assets/style.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/style.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet">
 
 
     <link href="<?php echo base_url(); ?>assets/w3.css" rel="stylesheet">
@@ -22,9 +24,9 @@
 
     <link href="<?php echo base_url(); ?>assets/dashboard.css" rel="stylesheet">
     
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet" />
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet" />
-
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/animate.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/sequences.css" rel="stylesheet">
 
 
 
@@ -92,4 +94,4 @@ textarea:focus, input:focus{
 }
 </style>
   </head>
-  <body class="bkg">
+  <body>
