@@ -43,7 +43,6 @@ class Getter extends CI_Model{
     }
 
     function edit_campaign($id) {
-        $id = $this->uri->segment(3);        
 
         $query = $this->db->query("SELECT id, campaign_name
         FROM `campaigns` 

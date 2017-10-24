@@ -40,21 +40,16 @@
                         <span> <?php echo $e->created_at ?> </span>
                     </div>
 
-
                       <span class="btn-indikator">
                       <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button>
                       </a>
 
-        <span class="btn-indikator">
-
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button>
-
                         <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
                       </span>
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-
+                    
                     <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
@@ -88,8 +83,6 @@
                     </a>
                   </div>
                  <?php } ?>
-
-
 
                 </div>
               </div>
