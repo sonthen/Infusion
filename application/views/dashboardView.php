@@ -19,59 +19,42 @@
   <div class="bkg row">
 
     <div class="col-md-11">
-          <div class="row">
-              <div class="col-md-offset-1 col-md-11 w3-container">
-                  <h3 class="sms-text text-center">CAMPAIGN BOARD</h3>
-                  <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
-              </div>
+      <div class="row">
+          <div class="col-md-offset-1 col-md-11 w3-container">
+              <h3 class="sms-text text-center">CAMPAIGN BOARD</h3>
+              <span><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-circle  btn-plus2">+</button></span>
           </div>
       </div>
+    </div>
 
-          <?php foreach( $dashboard_content as $e) {?>
-            <div class="col-md-6">
-              <div class="col-md-12">
-                <div class="row">
-                <?php if($e->stat==0){ ?>
-                  <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
-                    <div class="box-label">
-                        <span>SEQ :</span>
-                        <span> 300 </span>
-                        <span class="blue-line"></span>
-                        <span> <?php echo $e->created_at ?> </span>
-                    </div>
-
-<<<<<<< HEAD
-
-                      <span class="btn-indikator">
-
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button>
-
-                        <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
-                      </span>
+<?php foreach( $dashboard_content as $e) {?>
+<div class="col-md-6">
+  <div class="col-md-12">
+    <div class="row">
+    <?php if($e->stat==0){ ?>
+      <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
+        <div class="box-label">
+            <span>SEQ :</span>
+            <span> 300 </span>
+            <span class="blue-line"></span>
+            <span> <?php echo $e->created_at ?> </span>
+        </div>
 
 
+        <span class="btn-indikator">
 
-                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-=======
-                    <span class="btn-indikator">
-                      <a href="<?php echo base_url('userCont/toggle/'.$e->id.'/'.$e->stat); ?>">
-                      <button type="button" class="btn btn-default btn-xs btn-on">On</button></a>
-                      
-                      <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
-                    </span>
+          <button type="button" class="btn btn-default btn-xs btn-on">On</button>
 
-                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+          <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
+        </span>
 
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button>
-                 
-                    <a href="<?php echo base_url('userCont/sequenceform'); ?>">
-                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-                    </a>
 
->>>>>>> ab1aba25b518b9f4236b7fcf5f1b7115fff859b0
-                  </div>
-                 <?php } ?>
+
+        <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+        <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+
+  </div>
+ <?php } ?>
 
                  <!-- ######################### -->
 
@@ -95,15 +78,7 @@
 
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-<<<<<<< HEAD
                     <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-=======
-                                        
-                    <button type="button" class="btn btn-default btn-edit btn-xs">Edit Campaign</button>
-                    <a href="<?php echo base_url('userCont/sequenceform'); ?>">
-                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-                    </a>
->>>>>>> ab1aba25b518b9f4236b7fcf5f1b7115fff859b0
                   </div>
                  <?php } ?>
 
