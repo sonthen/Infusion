@@ -11,6 +11,7 @@
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="sequences.css" rel="stylesheet">
+        <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,67 +21,69 @@
     <body>
         <div>
             <div class="row">
-                <div class="col-md-offset-2 col-md-8">
+                <div class="col-md-1 btn-back">
+                    <button type="button" class="btn btn-default">Back to Dashboard</button>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
                     <h3 class="text-campagin-name">Campaign Name :</h3>
-                    <input>
-                    <button type="button" class="btn btn-default btn-plus-seq-besar">+</button>
+                    <button type="button" class="btn btn-default btn-besar btn-plus-seq-besar">+</button>
+                    <input type="text" class="form-control text-form-input" placeholder="Placeholder text">
+                    <button type="button" class="btn btn-default btn-besar btn-create-campaign">Change Name</button>
                 </div>
                 <div class="col-md-12">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 box-seq-besar">
+                        <div class="row anjing">
+                            <div id="thor1" data-size="lexi1" class="col-md-12 box-seq-besar">
                                 <div class="row">
                                     <div class="box-seq-status col-md-4">
-                                        <h3 class="text-seq-stage">Stage/lvl<br></h3>
-                                        <button type="button" class="btn btn-default btn-seq-besar-plus">On</button>
-                                        <button type="button" class="btn btn-default btn-seq-besar-plus">Off</button>
-                                        <div class="btn-group btn-seq-dropdown">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">    Action
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li>
-                                                    <a href="#">Action</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Another action</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Something else here</a>
-                                                </li>
-                                                <li class="divider"></li>
-                                                <li>
-                                                    <a href="#">Separated link</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <button type="button" class="btn btn-default btn-seq-besar-plus">+</button>
+                                        <button type="button" class="btn btn-default btn-seq-on">On</button>
+                                        <button type="button" class="btn btn-default btn-seq-off">Off</button>
+                                        <button id="btn-plus" type="button" class="btn btn-default plus-button">+</button>
+                                        <select class="form-control text-seq-select">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option value="value">Name</option>
+                                        </select>
+                                        <input type="text" class="form-control input-seq-stage" placeholder="Stage/Lvl">
+                                    </div>
+                                    <div class="col-md-4 box-seq-container-name">
+                                        <input type="text" class="form-control input-seq-container-name" placeholder="Name">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3 box-seq-child">
+                                <div id="sapi1" class="row">
+                                    <div id="fuck1" data-size="fuck1" class="col-md-3 box-seq-child boxer col-md-offset-1">
                                         <button type="button" class="btn btn-default btn-xs btn-seq-sms">SMS</button>
                                         <button type="button" class="btn btn-default btn-xs btn-seq-email">Email</button>
                                         <h3 class="text-nama-seq">Nama Seq</h3>
-                                        <p class="text-seq-delay">456</p>
+                                        <p class="text-seq-delay">Parent Id</p>
+                                        <input type="text" class="form-control" placeholder="ID">
+                                        <p class="text-seq-delay">Delay</p>
+                                        <input type="text" class="form-control" placeholder="Delay">
                                         <p class="text-seq-subject">Subject</p>
-                                        <input type="text" class="form-control" placeholder="Placeholder text">
+                                        <input type="text" class="form-control" placeholder="Subject">
                                         <p class="text-seq-body">Body</p>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <textarea id="editor1" class="form-control" rows="3"></textarea>
                                         <button type="button" class="btn btn-default btn-seq-delete">Delete</button>
-                                        <button type="button" class="btn btn-default btn-seq-sent">Sent</button>
+                                        <button type="button" class="btn btn-default btn-seq-sent">Create</button>
                                     </div>
-                                    <div class="col-md-3 box-seq-child col-md-offset-1">
+                                    <div id="fuck1" data-size="fuck1" class="col-md-3 box-seq-child boxer col-md-offset-1">
                                         <button type="button" class="btn btn-default btn-xs btn-seq-sms">SMS</button>
                                         <button type="button" class="btn btn-default btn-xs btn-seq-email">Email</button>
                                         <h3 class="text-nama-seq">Nama Seq</h3>
-                                        <p class="text-seq-delay">456</p>
+                                        <p class="text-seq-delay">Parent Id</p>
+                                        <input type="text" class="form-control" placeholder="ID">
+                                        <p class="text-seq-delay">Delay</p>
+                                        <input type="text" class="form-control" placeholder="Delay">
                                         <p class="text-seq-subject">Subject</p>
-                                        <input type="text" class="form-control" placeholder="Placeholder text">
+                                        <input type="text" class="form-control" placeholder="Subject">
                                         <p class="text-seq-body">Body</p>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                        <button type="button" class="btn btn-default btn-seq-delete">Label</button>
-                                        <button type="button" class="btn btn-default btn-seq-sent">Label</button>
+                                        <textarea id="editor1" class="form-control" rows="3"></textarea>
+                                        <button type="button" class="btn btn-default btn-seq-delete">Delete</button>
+                                        <button type="button" class="btn btn-default btn-seq-sent">Create</button>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-default btn-seq-besar-create">Create</button>
                                     </div>
                                 </div>
                             </div>
@@ -96,5 +99,10 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="index.js"></script>
+        <!-- <script>
+          CKEDITOR.replace( 'editor1' );
+          CKEDITOR.replace( 'editor2' );
+        </script> -->
     </body>
 </html>

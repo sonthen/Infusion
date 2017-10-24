@@ -22,72 +22,73 @@ class userCont extends CI_Controller {
             $this->load->view('dashboardView', $data);
 
         }
+        function add_sequence_container(){
+            $id_campaign = $this->uri->segment(3);
 
-        function sequenceform(){
-            $this->load->view('sequenceform');
+            $newsequencecontainer = [
+                'campaign_id' =>$id_campaign,
+                'sequence_container_name' =>$_POST['sequence_container_name'],
+                'lvl' =>$_POST['lvl'],
+                'label_id'=>$_POST['label_id']
+            ];
+
+              $this->db->insert('sequence_container', $newsequencecontainer);
+              redirect('userCont/mencoba/'.$id_campaign);
+
         }
 
-        function addSequence(){
-            $this->load->view('sequenceform');
-            $id= $this->input->post('id');
+        function add_sequence(){
+            $id_campaign = $this->input->post('id_campaign');
+            $id_container =$this->uri->segment(4);
 
             $newsequence = [
-                'campaign_id' =>$id,
-                'label_id' =>$_POST['label'],
+                'container_id' =>$id_container,
+                'parent_id' =>$_POST['parent_id'],
                 'delay' =>$_POST['delay'],
-                'value_1'=>$_POST['subject'],
-                'value_2' =>$_POST['body'],
+                'value_1'=>$_POST['value_1'],
+                'value_2' =>$_POST['value_2']
             ];
 
               $this->db->insert('sequences', $newsequence);
-              redirect('userCont/mencoba','refresh');
+              redirect('userCont/mencoba/'.$id_campaign);
 
+        }
+        function edit_sequence(){
+            $id_campaign = $this->input->post('id_campaign');
+            $id_sequence =$this->uri->segment(4);
+                $editedsequence = [
+                    'parent_id' =>$this->input->post('parent_id'),
+                    'delay' =>$this->input->post('delay'),
+                    'value_1' =>$this->input->post('value_1'),
+                    'value_2' =>$this->input->post('value_2')
+                ];
+            $this->db->where('id',$id_sequence);
+            $this->db->update('sequences',$editedsequence);
+
+            redirect("usercont/mencoba/".$id_campaign);
+        }
+        function delete_sequence(){
+            $id_campaign = $this->uri->segment(3);
+            $id_sequence = $this->uri->segment(4);
+            
+            $this->load->model('Getter');
+            $this->Getter->delete_sequence($id_sequence);
+
+            redirect("usercont/mencoba/".$id_campaign);
         }
 
         
-
-
         
-        
-        // public function danieltest()
-        // {
-        //     $this->load->model('Getter');
-        //     $data['kirim_content'] = $this->Getter->get_cobakirim();
-        //     $this->load->view('daniel_test/sequence_test.php', $data);
-        // }
 
+        function edit_campaign(){
+            $id = $this->input->post('id');
+                $newcampaign = [
+                    'campaign_name' =>$this->input->post('campaign_name')
+                ];
+            $this->db->where('id',$id);
+            $this->db->update('campaigns',$newcampaign);
 
-       
-
-        public function addSmsCampaign(){
-            if (isset($_POST['addSmsCampaign'])){
-                $this->form_validation->set_rules('campaign_name', 'campaign name', 'required|is_unique[campaigns.campaign_name]');
-                $this->form_validation->set_rules('sequence_qty', 'sequence quantity', 'required|integer');
-                $this->form_validation->set_rules('label_id', 'label id', 'required');
-
-
-                            //if form validation true
-                if ($this->form_validation->run() == TRUE){
-
-                  $newcampaign = [
-                      'campaign_name' =>$_POST['campaign_name'],
-                      'sequence_qty'=>$_POST['sequence_qty'],
-                      'label_id' =>$_POST['label_id'],
-                      'campaign_type' => $_POST['campaign_type'],
-                        'created_at'=>date('Y-m-d')
-                  ];
-
-                    $this->db->insert('campaigns', $newcampaign);
-                    redirect('userCont/sequenceform','refresh');
-
-               }
-
-            }
-
-               //for load data categoryat view
-               $this->load->model('Getter');
-               $data['label_content'] = $this->Getter->get_label();
-               $this->load->view('newsmscampaignView', $data);
+            redirect("usercont/mencoba/".$id);
         }
 
 
@@ -135,58 +136,12 @@ class userCont extends CI_Controller {
 
         }
 
-
-
-        public function sequencetest(){
-            $this->load->view('daniel_test/sequence_test','refresh');
-        }
-
-
-		function edit(){
-	        //maka dia akan print nama functionnya
-	        // echo $this->uri->segment(2);
-            $this->load->model('Getter');
-            
-            
-	        $id = $this->uri->segment(3);
-            $data['dashboard_content'] = $this->Getter->get_dash_content();
-            $data['campaign'] = $this->Getter->edit_campaign($id);
-	        $this->load->view('dashboardView',$data);
-
-	    }
-
-        function edit_data(){
-            $id = $this->input->post('id');
-                $newcampaign = [
-                    'campaign_name' =>$this->input->post('campaign_name')
-                ];
-            $this->db->where('id',$id);
-            $this->db->update('campaigns',$newcampaign);
-
-            redirect("usercont/dashboardview");
-        }
-
-        function delete(){
-            $id = $this->uri->segment(3);
-            // $this->db->where('campaign_id', $id);
-            // $this->db->delete('sequencess_stat');
-            $this->db->where('campaign_id', $id);
-            $this->db->delete('sequencess');
-            $this->db->where('id', $id);
-            $this->db->delete('campaigns');
-            redirect("usercont/dashboardview");
-
-        }
-
-
-        
-
-
-
         ##################### batas coba-coba ######################
         function Mencoba(){
             $this->load->model('Getter');
             $id = $this->uri->segment(3);
+            $data['sequence_container'] = $this->Getter->get_sequence_container_content($id);
+            $data['sequence_content'] = $this->Getter->get_sequence_content();
             $data['campaign'] = $this->Getter->edit_campaign($id);
             $data['label_content'] = $this->Getter->get_label();
             $this->load->view('viewmencoba', $data);

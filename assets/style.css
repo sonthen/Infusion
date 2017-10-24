@@ -1,17 +1,8 @@
 
-.navbar-header {
-    background: #f9fcff;
-    font-size: 12px;
-    font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #707478;
-}
-
 .page-header-fixed {
     padding-top: 54px;
 }
 
-
-/* 2.2 Page Loader */
 
 #page-loader {
     position: fixed;
@@ -73,12 +64,6 @@
 }
 
 
-/* 2.3 Header & header elements */
-
-.header {
-    z-index: 1020;
-    margin-bottom: 0;
-}
 .navbar {
     border: none;
     -webkit-border-radius: 0;
@@ -87,23 +72,7 @@
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.3);
     box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
-.navbar.navbar-default {
-    background: #fff;
-}
-.navbar.navbar-inverse {
-    background: #2d353c;
-}
-.navbar.navbar-inverse .navbar-brand,
-.navbar.navbar-inverse .navbar-nav > li > a {
-    color: #a8acb1;
-}
-.navbar.navbar-inverse .navbar-form .form-control {
-    background: url(../img/transparent/black-0.2.png);
-    background: rgba(0,0,0,0.2);
-    border-color: #1F2429;
-    border-color: rgba(0,0,0,0.2);
-    color: #a8acb1;
-}
+
 .navbar-brand {
     margin-right: 10px;
     padding: 12px 20px;
@@ -125,84 +94,7 @@
     opacity: 0.9;
     filter: alpha(opacity=90);
 }
-.navbar-toggle {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-}
-.navbar-toggle.pull-left {
-    margin-left: 15px;
-    margin-right: 0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background: #333;
-}
-.navbar-toggle:hover, 
-.navbar-toggle:focus {
-    background: none !important;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-}
-.navbar-nav > li > a {
-    line-height: 20px;
-    padding: 17px 15px;
-}
-.navbar-default .navbar-nav > li > a {
-    color: #585663;
-}
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus {
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-}
-.navbar-nav > .open > a, 
-.navbar-nav > .open > a:hover, 
-.navbar-nav > .open > a:focus {
-    background: none !important;
-    color: #333;
-    opacity: 1.0;
-    filter: alpha(opacity=100);
-}
-.navbar-form {
-    margin: 12px 0;
-}
-.fade .navbar-form .form-control {
-    -webkit-animation: none;
-}
-.navbar-form .form-control {
-    width: 200px;
-    padding: 5px 15px;
-    height: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-}
-.navbar-form .form-control:focus {
-    width: 300px;
-    animation: expand .2s;
-    -webkit-animation: expand .2s;
-}
-@keyframes expand {
-    from { width: 200px; }
-    to { width: 300px; }
-}
-@-webkit-keyframes expand {
-    from { width: 200px; }
-    to { width: 300px; }
-}
-.navbar-form .btn-search {
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    height: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: none;
-    background: none;
-    -webkit-border-radius: 0 30px 30px 0;
-    -moz-border-radius: 0 30px 30px 0;
-    border-radius: 0 30px 30px 0;
+
 }
 .navbar-nav > li > .dropdown-menu {
     border-top: 1px solid #eee;
@@ -233,149 +125,3 @@
     border-radius: 30px;
 }
 
-
-/* 3.2 Component - Dropdown Menu */
-
-
-.dropdown-menu.media-list {
-    max-width: 280px;
-    padding: 0;
-}
-.dropdown-menu.media-list p {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    margin-bottom: 4px;
-    max-width: 200px;
-}
-.dropdown-menu.media-list .dropdown-header {
-    padding: 10px 20px !important;
-    background: #fafafa;
-    font-size: 12px;
-}
-.dropdown-menu.media-list .dropdown-header + .media {
-    margin-top: -10px;
-}
-.dropdown-menu.media-list > .media {
-    margin-top: 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin-bottom: -1px;
-}
-.dropdown-menu.media-list > .media > a {
-    display: block;
-    padding: 10px 20px !important;
-}
-.dropdown-menu.media-list > .media .media-left {
-    padding-right: 10px;
-}
-.dropdown-menu.media-list > .media .media-right {
-    padding-left: 10px;
-}
-.dropdown-menu.media-list > .media .media-object {
-    height: 36px;
-    width: 36px;
-    line-height: 36px;
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-
-
-
-/*spinner navbar loading slide to right*/
-
-
-
-.pace-inactive {
-    opacity: 0;
-}
-.pace.pace-inactive {
-    z-index: 0;
-}
-.ie8 .pace-inactive,
-.ie8 .pace .pace-activity {
-    display: none;
-}
-.pace {
-    background: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
-    z-index: 1020;
-}
-.pace-progress {
-    position: fixed;
-    top: 54px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    height: 3px;
-    background: #00acac;
-    -webkit-transition: width 1s;
-    -moz-transition: width 1s;
-    -o-transition: width 1s;
-    transition: width 1s;
-    z-index: 2000;
-}
-.pace:before {
-    content: '';
-    background: none;
-    position: fixed;
-    top: 54px;
-    right: 0;
-    left: 0;
-    height: 3px;
-}
-.pace .pace-activity {
-    display: block;
-    position: fixed;
-    z-index: 2000;
-    top: 65px;
-    right: 8px;
-    width: 14px;
-    height: 14px;
-    border: solid 2px transparent;
-    border-top-color: #00acac;
-    border-left-color: #00acac;
-    border-radius: 10px;
-    -webkit-animation: pace-spinner 400ms linear infinite;
-    -moz-animation: pace-spinner 400ms linear infinite;
-    -ms-animation: pace-spinner 400ms linear infinite;
-    -o-animation: pace-spinner 400ms linear infinite;
-    animation: pace-spinner 400ms linear infinite;
-}
-@-webkit-keyframes pace-spinner {
-  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-moz-keyframes pace-spinner {
-  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-o-keyframes pace-spinner {
-  0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-ms-keyframes pace-spinner {
-  0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
-  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@keyframes pace-spinner {
-  0% { transform: rotate(0deg); transform: rotate(0deg); }
-  100% { transform: rotate(360deg); transform: rotate(360deg); }
-}
-.pace-top .pace:before,
-.pace-top .pace-progress {
-    top: 0;
-}
-.pace-top .pace .pace-activity {
-    top: 11px;
-}

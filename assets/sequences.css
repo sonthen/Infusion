@@ -10,26 +10,48 @@
     display: inline-block;
 }
 
+.text-form-input
+{
+    width: 35%;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+.text-seq-select
+{
+    display: inline;
+    width: 40%;
+    margin-left: 11px;
+}
+
 .box-seq-besar
 {
-    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    margin-bottom: 15px;
 }
 
 .box-seq-child
 {
-    border: 1px solid black;
     padding-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: rgba(251, 251, 251, 0.84);
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
 }
 
 .box-seq-status
 {
     float: right;
+    display: inline-block;
 }
 
 .text-nama-seq
 {
     display: inline;
     margin-right: 10px;
+    color: #222831;
 }
 
 .btn-seq-email
@@ -37,29 +59,44 @@
     float: right;
 }
 
+.btn-seq-email-active
+{
+    float: right;
+    background: #F96D00;
+    color: #ffffff;
+}
+
 .btn-seq-sms
 {
     float: right;
 }
 
+.btn-seq-sms-active
+{
+    float: right;
+    background: #F96D00;
+    color: #ffffff;
+}
+
 .text-seq-delay
 {
     margin-top: 10px;
-    width: 13%;
-    border: 1px solid grey;
     font-size: 18px;
     margin-bottom: 10px;
+    color: #f79859;
 }
 
 .text-seq-subject
 {
     font-size: 18px;
+    color: #f79859;
 }
 
 .text-seq-body
 {
     margin-top: 10px;
     font-size: 18px;
+    color: #f79859;
 }
 
 .btn-seq-delete
@@ -74,6 +111,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     float: right;
+    color: #F96D00;
 }
 
 .btn-seq-dropdown
@@ -82,9 +120,9 @@
 
 .text-seq-stage
 {
-    display: block;
-    float: right;
+    display: inline;
     margin-top: 0px;
+    float: right;
 }
 
 .btn-seq-besar-plus
@@ -95,5 +133,67 @@
 .btn-plus-seq-besar
 {
     float: right;
+}
+
+.btn-seq-besar-create
+{
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn-create-campaign
+{
+    margin-left: 2px;
+}
+
+.btn-seq-on
+{
+    display: inline;
+    background-color: #3bf140;
+    color: #f9f9f9;
+}
+
+.btn-seq-off
+{
+    background-color: #d11c1c;
+    display: inline;
+    color: #f9f9f9;
+}
+
+.box-seq-container-name
+{
+    display: inline-block;
+    float: left;
+}
+
+.text-seq-container-name
+{
+    display: inline;
+    margin-top: 0px;
+    float: left;
+}
+
+.input-seq-container-name
+{
+    width: 35%;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+.input-seq-stage
+{
+    width: 25%;
+    display: inline-block;
+    margin-bottom: 8px;
+    float: right;
+}
+
+.btn-back
+{
+    position: absolute;
+    top: 70px;
+    left: 25px;
 }
 
