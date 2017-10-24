@@ -27,21 +27,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
-<?php foreach( $dashboard_content as $e) {?>
-<div class="col-md-6">
-  <div class="col-md-12">
-    <div class="row">
-    <?php if($e->stat==0){ ?>
-      <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
-        <div class="box-label">
-            <span>SEQ :</span>
-            <span> 300 </span>
-            <span class="blue-line"></span>
-            <span> <?php echo $e->created_at ?> </span>
-        </div>
-
-=======
           <?php foreach( $dashboard_content as $e) {?>
             <div class="col-md-6">
               <div class="col-md-12">
@@ -60,7 +45,6 @@
                       <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-on">On</button>
                       </a>
->>>>>>> c3052b71144e6327aba818311ac6e4a1575efefa
 
         <span class="btn-indikator">
 
@@ -69,23 +53,13 @@
           <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
         </span>
 
-<<<<<<< HEAD
-
-
-        <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-        <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-
-  </div>
- <?php } ?>
-=======
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    
+
                     <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
                   </div>
                  <?php } ?>
->>>>>>> c3052b71144e6327aba818311ac6e4a1575efefa
 
                  <!-- ######################### -->
 
@@ -109,13 +83,9 @@
 
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-<<<<<<< HEAD
-                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
-=======
                     <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
                       <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
->>>>>>> c3052b71144e6327aba818311ac6e4a1575efefa
                   </div>
                  <?php } ?>
 
