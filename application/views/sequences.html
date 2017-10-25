@@ -24,18 +24,27 @@
                 <div class="col-md-1 btn-back">
                     <button type="button" class="btn btn-default">Back to Dashboard</button>
                 </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <h3 class="text-campagin-name">Campaign Name :</h3>
-                    <button type="button" class="btn btn-default btn-besar btn-plus-seq-besar">+</button>
-                    <input type="text" class="form-control text-form-input" placeholder="Placeholder text">
-                    <button type="button" class="btn btn-default btn-besar btn-create-campaign">Change Name</button>
+                <div class="container">
+                    <div class="col-md-12">
+                        <h3 class="text-campagin-name">Campaign Name :</h3>
+                        <button type="button" class="btn btn-default btn-besar btn-plus-seq-besar">+</button>
+                        <input type="text" class="form-control text-form-input" placeholder="Placeholder text">
+                        <button type="button" class="btn btn-default btn-create-campaign">Change Name</button>
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <div class="container">
                         <div class="row anjing">
-                            <div id="thor1" data-size="lexi1" class="col-md-12 box-seq-besar">
+                            <div data-size="lexi1" class="col-md-12 box-seq-besar">
                                 <div class="row">
-                                    <div class="box-seq-status col-md-4">
+                                    <div class="col-md-4 box-seq-container-name">
+                                        <input type="text" class="form-control input-seq-container-name" placeholder="Name">
+                                    </div>
+                                    <div class="box-seq-status col-md-2">
+                                        <button type="button" class="btn btn-default btn-seq-besar-delete">X</button>
+                                        <button type="button" class="btn btn-default btn-seq-besar-minimize">-</button>
+                                    </div>
+                                    <div class="box-seq-status col-md-5">
                                         <button type="button" class="btn btn-default btn-seq-on">On</button>
                                         <button type="button" class="btn btn-default btn-seq-off">Off</button>
                                         <button id="btn-plus" type="button" class="btn btn-default plus-button">+</button>
@@ -47,34 +56,20 @@
                                         </select>
                                         <input type="text" class="form-control input-seq-stage" placeholder="Stage/Lvl">
                                     </div>
-                                    <div class="col-md-4 box-seq-container-name">
-                                        <input type="text" class="form-control input-seq-container-name" placeholder="Name">
-                                    </div>
                                 </div>
                                 <div id="sapi1" class="row">
-                                    <div id="fuck1" data-size="fuck1" class="col-md-3 box-seq-child boxer col-md-offset-1">
-                                        <button type="button" class="btn btn-default btn-xs btn-seq-sms">SMS</button>
+                                    <div data-size="fuck1" class="col-md-3 box-seq-child boxer col-md-offset-1">
                                         <button type="button" class="btn btn-default btn-xs btn-seq-email">Email</button>
-                                        <h3 class="text-nama-seq">Nama Seq</h3>
-                                        <p class="text-seq-delay">Parent Id</p>
-                                        <input type="text" class="form-control" placeholder="ID">
+                                        <input type="text" class="form-control inputseq-namaseq" placeholder="NamaSeq">
+                                        <p class="text-seq-delay">Parent</p>
+                                        <input type="text" class="form-control">
                                         <p class="text-seq-delay">Delay</p>
-                                        <input type="text" class="form-control" placeholder="Delay">
-                                        <p class="text-seq-subject">Subject</p>
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                        <p class="text-seq-body">Body</p>
-                                        <textarea id="editor1" class="form-control" rows="3"></textarea>
-                                        <button type="button" class="btn btn-default btn-seq-delete">Delete</button>
-                                        <button type="button" class="btn btn-default btn-seq-sent">Create</button>
-                                    </div>
-                                    <div id="fuck1" data-size="fuck1" class="col-md-3 box-seq-child boxer col-md-offset-1">
-                                        <button type="button" class="btn btn-default btn-xs btn-seq-sms">SMS</button>
-                                        <button type="button" class="btn btn-default btn-xs btn-seq-email">Email</button>
-                                        <h3 class="text-nama-seq">Nama Seq</h3>
-                                        <p class="text-seq-delay">Parent Id</p>
-                                        <input type="text" class="form-control" placeholder="ID">
-                                        <p class="text-seq-delay">Delay</p>
-                                        <input type="text" class="form-control" placeholder="Delay">
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option value="value">Name</option>
+                                        </select>
                                         <p class="text-seq-subject">Subject</p>
                                         <input type="text" class="form-control" placeholder="Subject">
                                         <p class="text-seq-body">Body</p>
