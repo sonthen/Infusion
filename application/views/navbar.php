@@ -97,5 +97,3 @@
       Dashboard.init();
     });
   </script>
-
-  <?php $this->load->view('footer'); ?>

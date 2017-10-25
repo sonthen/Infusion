@@ -1,5 +1,3 @@
-<head>
-</head>
 <style media="screen">
 
 .row{
@@ -41,16 +39,14 @@
                     </div>
 
                       <span class="btn-indikator">
-                      <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
-                        <button type="button" class="btn btn-default btn-xs btn-on">On</button>
-                      </a>
-
-                        <button type="button" class="btn btn-default btn-xs btn-off"disabled>Off</button>
+                        <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
+                          <button type="button" class="btn btn-default btn-xs btn-off">Off</button>
+                        </a>
                       </span>
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
                     
-                    <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
+                    <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
                   </div>
@@ -67,19 +63,15 @@
                         <span> <?php echo $e->created_at ?> </span>
                     </div>
 
-
                       <span class="btn-indikator">
-
-                          <button type="button" class="btn btn-default btn-xs btn-on"disabled>On</button>
-
-                          <a href="<?php echo base_url('index.php/usercont/toggle/'.$e->id.'/'.$e->stat); ?>">
-                          <button type="button" class="btn btn-default btn-xs btn-off">Off</button></a>
+                          <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
+                            <button type="button" class="btn btn-default btn-xs btn-on">On</button>
+                          </a>
                       </span>
 
-
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    <a href="<?php echo base_url('index.php/usercont/mencoba/'.$e->id); ?>">
-                      <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                    <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-sequences" disabled>Sequences</button>
                     </a>
                   </div>
                  <?php } ?>
@@ -93,7 +85,7 @@
 </div>
 
 <div class="w3-container modal1">
-  <?php echo form_open('userCont/addEmailCampaign'); ?>
+  <?php echo form_open('usercont/addEmailCampaign'); ?>
     <div id="id01" class="w3-modal  w3-animate-opacity">
       <div class="w3-modal-content w3-card-4">
         <header class="w3-container w3-teal modal-campaign modal1">

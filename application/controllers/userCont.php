@@ -43,6 +43,7 @@ class userCont extends CI_Controller {
 
             $newsequence = [
                 'container_id' =>$id_container,
+                'sequence_name' =>$_POST['sequence_name'],
                 'parent_id' =>$_POST['parent_id'],
                 'delay' =>$_POST['delay'],
                 'value_1'=>$_POST['value_1'],
@@ -92,24 +93,38 @@ class userCont extends CI_Controller {
         }
 
 
-        public function toggle() {
+        public function toggle_campaign() {
 
-                $this->load->model('Getter');
+            $id= $this->uri->segment(3);
+            $stat= $this->uri->segment(4);
+            $data['dashboard_content'] = $this->Getter->get_campaign($id);
 
-                $id= $this->uri->segment(3);
-                $stat= $this->uri->segment(4);
-                $data['dashboard_content'] = $this->Getter->get_campaign($id);
+            if($stat==0){
+                $newStat = ['stat' => 1];
+            }
+            else{
+                $newStat = ['stat' => 0];
+            }
+            $this->db->where('id',$id);
+            $this->db->update('campaigns',$newStat);
+            redirect('userCont/dashboardview');
+        }
+        public function toggle_container() {
+            
+            $id_campaign= $this->uri->segment(3);
+            $id_container= $this->uri->segment(4);
+            $stat= $this->uri->segment(5);
+            $data['dashboard_content'] = $this->Getter->get_sequence_container_content($id_container);
 
-                if($stat==0){
-                    $newStat = ['stat' => 1];
-                }
-                else{
-                    $newStat = ['stat' => 0];
-                }
-                $this->db->where('id',$id);
-                $this->db->update('campaigns',$newStat);
-                redirect('userCont/dashboardview');
-
+            if($stat==0){
+                $newStat = ['stat' => 1];
+            }
+            else{
+                $newStat = ['stat' => 0];
+            }
+            $this->db->where('id',$id_container);
+            $this->db->update('sequence_container',$newStat);
+            redirect('userCont/mencoba/'.$id_campaign);
         }
 
         // this is for add newcampaign to database
