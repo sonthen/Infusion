@@ -11,16 +11,16 @@ class Getter extends CI_Model{
     }
 
     function get_sequence_container_content($id) {
-        
+
         $query = $this->db->query("SELECT id, sequence_container_name, container_parent_id, lvl, campaign_id, label_id, stat
-        FROM `sequence_container` 
+        FROM `sequence_container`
         WHERE campaign_id = $id"
         );
         return $query->result_array() ;
     }
 
     function get_sequence_content() {
-        
+
         $query = $this->db->query("SELECT id, sequence_name, sequence_type, parent_id, container_id, delay, value_1, value_2, container_id
         FROM `sequences`"
         );
@@ -45,33 +45,33 @@ class Getter extends CI_Model{
     function edit_campaign($id) {
 
         $query = $this->db->query("SELECT id, campaign_name
-        FROM `campaigns` 
+        FROM `campaigns`
         WHERE id = $id"
         );
         return $query->result_array() ;
     }
 
     function delete_campaign($id) {
-        
+
         $query = $this->db->query("SELECT c.id as C_ID, s.id as S_ID, sa.id AS SA_ID, sap.id AS SAP_ID
                                     FROM `campaigns` c
-                                    LEFT JOIN sequences s 
+                                    LEFT JOIN sequences s
                                         ON c.id = s.campaign_id
-                                    LEFT JOIN sequence_action sa     
+                                    LEFT JOIN sequence_action sa
                                         ON s.id = sa.sequence_ID
-                                    LEFT JOIN seq_action_param sap  
+                                    LEFT JOIN seq_action_param sap
                                         ON sa.id = sap.sequence_act_ID"
                                     );
     }
 
     function delete_sequence($id) {
-        
-        $query = $this->db->query("DELETE FROM `sequences` 
+
+        $query = $this->db->query("DELETE FROM `sequences`
                                     WHERE `sequences`.`id` = $id"
                                     );
-        
+
     }
 
-    
+
 
 }
