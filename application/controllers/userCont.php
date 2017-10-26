@@ -28,9 +28,9 @@ class userCont extends CI_Controller {
         // ################### sampai sini ####################
         function add_sequence_container($parent_cont_id){
             $id_campaign = $this->uri->segment(3);
-            $parent_lvl = $this->Getter->parent_container_lvl($_POST['container_parent']);
+            $parent_lvl = $this->Getter->parent_container_lvl();
             // $new_container_lvl= $parent_lvl[0]['lvl']+1;
-            print_r($parent_lvl);
+            print_r($_POST['container_parent']);
             // $newsequencecontainer = [
             //     'campaign_id' =>$id_campaign,
             //     'container_parent_id' =>$_POST['container_parent'],

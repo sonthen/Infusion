@@ -18,7 +18,7 @@ class Getter extends CI_Model{
         );
         return $query->result_array() ;
     }
-    function parent_container_lvl ($id) {
+    function parent_container_lvl () {
         
         $query = $this->db->query("SELECT lvl 
         FROM `sequence_container` 
