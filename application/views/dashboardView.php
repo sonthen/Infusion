@@ -42,7 +42,11 @@
                         <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button>
                         </a>
+                        
+                          <button type="button" class="btn btn-default btn-xs btn-off" onclick="document.getElementById('modal-delete').style.display='block'">&times</button>
+                     
                       </span>
+                      
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
                     
@@ -50,6 +54,25 @@
                         <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
                   </div>
+                  <!-- ##### modal are you sure ##### -->
+                  <div class="w3-container modal1">
+                    <div id="modal-delete" class="w3-modal  w3-animate-opacity">
+                      <div class="w3-modal-content w3-card-4">
+                        <header class="w3-container w3-teal modal-campaign modal1">
+                            <span onclick="document.getElementById('modal-delete').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+                            <h2>Are You Sure?</h2>
+                        </header>
+                        <div class="w3-container modal1">
+                          <button class="btn-create-campaign btn" name="addEmailCampaign" onclick="document.getElementById('modal-delete').style.display='none'">No</button>
+                          <a href="<?php echo base_url('usercont/delete_campaign/'.$e->id); ?>">
+                            <button class="btn-create-campaign btn" name="addEmailCampaign">Yes</button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ##### akhir modal ###### -->
+
                  <?php } ?>
 
                  <!-- ######################### -->

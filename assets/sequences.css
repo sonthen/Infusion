@@ -21,7 +21,7 @@
 .text-seq-select
 {
     display: inline;
-    width: 34%;
+    width: 20%;
     margin-left: 11px;
 }
 
@@ -30,21 +30,20 @@
     border-radius: 5px;
     background-color: #B6D7DE;
     margin-bottom: 15px;
+    padding: 10px 20px 15px;
 }
-
 
 .box-seq-child
 {
     padding-top: 10px;
-    margin-bottom: 20px;
     border-radius: 4px;
     background-color: #FCEDDA;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+    margin: 20px 20px 20px 5%;
 }
 
 .box-seq-status
 {
-    float: right;
     display: inline-block;
 }
 
@@ -123,7 +122,6 @@
 {
     display: inline;
     margin-top: 0px;
-    float: right;
 }
 
 .btn-seq-besar-plus
@@ -139,13 +137,13 @@
 .btn-seq-besar-create
 {
     float: right;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    display: inline-block;
+    margin-left: 15px;
 }
 
 .btn-seq-besar-delete
 {
-    float: right;
+    
 }
 
 .btn-create-campaign
@@ -193,7 +191,6 @@
     width: 21%;
     display: inline-block;
     margin-bottom: 8px;
-    float: right;
 }
 
 .btn-back
@@ -205,6 +202,6 @@
 
 .btn-seq-besar-minimize
 {
-    float: right;
+    
 }
 
