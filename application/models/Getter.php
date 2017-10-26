@@ -19,9 +19,9 @@ class Getter extends CI_Model{
         return $query->result_array() ;
     }
     function parent_container_lvl ($id) {
-        
-        $query = $this->db->query("SELECT lvl 
-        FROM `sequence_container` 
+
+        $query = $this->db->query("SELECT lvl
+        FROM `sequence_container`
         WHERE id=18"
         );
 
@@ -64,21 +64,9 @@ class Getter extends CI_Model{
     }
 
     function delete_campaign($id) {
-<<<<<<< HEAD
 
-        $query = $this->db->query("SELECT c.id as C_ID, s.id as S_ID, sa.id AS SA_ID, sap.id AS SAP_ID
-                                    FROM `campaigns` c
-                                    LEFT JOIN sequences s
-                                        ON c.id = s.campaign_id
-                                    LEFT JOIN sequence_action sa
-                                        ON s.id = sa.sequence_ID
-                                    LEFT JOIN seq_action_param sap
-                                        ON sa.id = sap.sequence_act_ID"
-=======
-        
-        $query = $this->db->query("DELETE FROM `campaigns` 
+        $query = $this->db->query("DELETE FROM `campaigns`
                                     WHERE `campaigns`.`id` = $id"
->>>>>>> fc8dea455be32762794db7fde29ecf33773e432e
                                     );
     }
 
@@ -90,18 +78,16 @@ class Getter extends CI_Model{
 
     }
 
-<<<<<<< HEAD
-=======
     function delete_sequence_container($id) {
-        
-        $query = $this->db->query("DELETE FROM `sequence_container` 
+
+        $query = $this->db->query("DELETE FROM `sequence_container`
                                     WHERE `sequence_container`.`id` = $id"
                                     );
-        
+
     }
 
-    
->>>>>>> fc8dea455be32762794db7fde29ecf33773e432e
+
+
 
 
 }

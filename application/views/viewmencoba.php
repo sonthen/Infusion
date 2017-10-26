@@ -161,49 +161,12 @@
                                         <?php echo form_close(); ?>
                                     <?php } ?> <!-- end if id container -->
                                 <?php } ?><!-- end if foreach-->
-<<<<<<< HEAD
 
-
-                                <!-- button CREATE sequence besar -->
-                                <div class="col-md-12">
-                                    <button type="button" class="btn btn-default btn-seq-besar-create">Update</button>
-                                </div>
-=======
->>>>>>> fc8dea455be32762794db7fde29ecf33773e432e
                             </div>
                         </div>
                     <?php } ?> <!-- akhir FOREACH besar -->
 
 
-<<<<<<< HEAD
-    <!-- ######################################## -->
-
-
-
-
-=======
-    <!-- ################### modal ##################### -->
-                    <div class="w3-container modal1">
-                        <div id="id01" class="w3-modal  w3-animate-opacity">
-                            <div class="w3-modal-content w3-card-4">
-                                <header class="w3-container w3-teal modal-campaign modal1">
-                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
-                                    <h2>Create Campaign</h2>
-                                    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
-                                </header>
-                                <div class="w3-container modal1">
-                                    <p class="modal-text">Title Campaign</p>
-                                    <input value='<?php echo set_value('campaign_name')?>' type="text" class="form-control" name="campaign_name" id="campaign_name">
-
-                                    <a href="<?php echo base_url('usercont/addEmailCampaign'); ?>">
-                                    <button class="btn-create-campaign btn" name="addEmailCampaign">Create</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    <!-- ################### akhir modal ##################### -->
-
->>>>>>> fc8dea455be32762794db7fde29ecf33773e432e
                 </div>
             </div>
         </div>
