@@ -41,6 +41,7 @@
                                         <?php } ?>
                                     </select>
                                     <select class="form-control text-seq-select" name="container_parent" id="container_parent">
+                                        <option value="<?php echo $seq_cont['id'] ?>"><?php echo $seq_cont['sequence_container_name'] ?></option>
                                         <?php foreach( $sequence_container as $seq_cont) { ?>
                                             <option value="<?php echo $seq_cont['id'] ?>"><?php echo $seq_cont['sequence_container_name'] ?></option>
                                         <?php } ?>
