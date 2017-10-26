@@ -23,20 +23,35 @@ class userCont extends CI_Controller {
 
         }
 
-    public function add_sequence_container(){
-      $id_campaign = $this->uri->segment(3);
 
-      $newsequencecontainer = [
-          'campaign_id' =>$id_campaign,
-          'sequence_container_name' =>$_POST['sequence_container_name'],
-          'lvl' =>$_POST['lvl'],
-          'label_id'=>$_POST['label_id']
-      ];
 
-        $this->db->insert('sequence_container', $newsequencecontainer);
-        redirect('userCont/mencoba/'.$id_campaign);
+        // ################### sampai sini ####################
+        function add_sequence_container($parent_cont_id){
+            $id_campaign = $this->uri->segment(3);
+            $parent_lvl = $this->Getter->parent_container_lvl($_POST['container_parent']);
+            // $new_container_lvl= $parent_lvl[0]['lvl']+1;
+            print_r($parent_lvl);
+            // $newsequencecontainer = [
+            //     'campaign_id' =>$id_campaign,
+            //     'container_parent_id' =>$_POST['container_parent'],
+            //     'sequence_container_name' =>$_POST['sequence_container_name'],
+            //     'lvl' =>$new_container_lvl,
+            //     'label_id'=>$_POST['label_id']
+            // ];
 
-  			}
+            //   $this->db->insert('sequence_container', $newsequencecontainer);
+            //   redirect('userCont/mencoba/'.$id_campaign);
+        }
+// &&&&&&&&&&&&
+        function delete_sequence_container(){
+            $id_campaign = $this->uri->segment(3);
+            $id_sequence_container = $this->uri->segment(4);
+
+            $this->load->model('Getter');
+            $this->Getter->delete_sequence_container($id_sequence_container);
+
+            redirect("usercont/mencoba/".$id_campaign);
+        }
 
         function add_sequence(){
             $id_campaign = $this->input->post('id_campaign');
@@ -91,6 +106,12 @@ class userCont extends CI_Controller {
             $this->db->update('campaigns',$newcampaign);
 
             redirect("usercont/mencoba/".$id);
+        }
+        function delete_campaign(){
+            $id_campaign = $this->uri->segment(3);
+            $this->Getter->delete_campaign($id_campaign);
+
+            redirect("usercont/dashboardview");
         }
 
 
