@@ -15,10 +15,10 @@ class userCont extends CI_Controller {
 
     //to get dashboard after user login
 		public function dashboardview() {
-            
+
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
-            
+
             $this->load->view('dashboardView', $data);
 
         }
@@ -46,7 +46,7 @@ class userCont extends CI_Controller {
         function delete_sequence_container(){
             $id_campaign = $this->uri->segment(3);
             $id_sequence_container = $this->uri->segment(4);
-            
+
             $this->load->model('Getter');
             $this->Getter->delete_sequence_container($id_sequence_container);
 
@@ -87,15 +87,15 @@ class userCont extends CI_Controller {
         function delete_sequence(){
             $id_campaign = $this->uri->segment(3);
             $id_sequence = $this->uri->segment(4);
-            
+
             $this->load->model('Getter');
             $this->Getter->delete_sequence($id_sequence);
 
             redirect("usercont/mencoba/".$id_campaign);
         }
 
-        
-        
+
+
 
         function edit_campaign(){
             $id = $this->input->post('id');
@@ -131,8 +131,10 @@ class userCont extends CI_Controller {
             $this->db->update('campaigns',$newStat);
             redirect('userCont/dashboardview');
         }
+
+				
         public function toggle_container() {
-            
+
             $id_campaign= $this->uri->segment(3);
             $id_container= $this->uri->segment(4);
             $stat= $this->uri->segment(5);
@@ -164,7 +166,7 @@ class userCont extends CI_Controller {
 
                     $this->db->insert('campaigns', $newcampaign);
                     redirect('userCont/dashboardview');
-                    
+
                 }
 
             }
