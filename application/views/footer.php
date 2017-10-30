@@ -6,19 +6,15 @@
   <script src="<?php echo base_url();?>assets/bootstrap/js/apps.min.js"></script>
   <script>    CKEDITOR.replace( 'editor' );  </script>
   <!-- ================== END PAGE LEVEL JS ================== -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
   <script>
     $(document).ready(function() {
       App.init();
       Dashboard.init();
+      $('#formnya').fadeIn()
     });
   </script>
 
-  <script>
-$(document).ready(function() {
-    $('#formnya').fadeIn();
-});
-</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
