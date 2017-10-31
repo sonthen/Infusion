@@ -15,10 +15,10 @@ class userCont extends CI_Controller {
 
     //to get dashboard after user login
 		public function dashboardview() {
-
+            
             $this->load->model('Getter');
             $data['dashboard_content'] = $this->Getter->get_dash_content();
-
+            
             $this->load->view('dashboardView', $data);
 
         }
@@ -28,25 +28,25 @@ class userCont extends CI_Controller {
         // ################### sampai sini ####################
         function add_sequence_container($parent_cont_id){
             $id_campaign = $this->uri->segment(3);
-            $parent_lvl = $this->Getter->parent_container_lvl();
-            // $new_container_lvl= $parent_lvl[0]['lvl']+1;
-            print_r($_POST['container_parent']);
-            // $newsequencecontainer = [
-            //     'campaign_id' =>$id_campaign,
-            //     'container_parent_id' =>$_POST['container_parent'],
-            //     'sequence_container_name' =>$_POST['sequence_container_name'],
-            //     'lvl' =>$new_container_lvl,
-            //     'label_id'=>$_POST['label_id']
-            // ];
+            $parent_lvl = $this->Getter->parent_container_lvl($_POST['container_parent']);
+            $new_container_lvl= $parent_lvl[0]['lvl']+1;
+           
+            $newsequencecontainer = [
+                'campaign_id' =>$id_campaign,
+                'container_parent_id' =>$_POST['container_parent'],
+                'sequence_container_name' =>$_POST['sequence_container_name'],
+                'lvl' =>$new_container_lvl,
+                'label_id'=>$_POST['label_id']
+            ];
 
-            //   $this->db->insert('sequence_container', $newsequencecontainer);
-            //   redirect('userCont/mencoba/'.$id_campaign);
+              $this->db->insert('sequence_container', $newsequencecontainer);
+              redirect('userCont/mencoba/'.$id_campaign);
         }
 // &&&&&&&&&&&&
         function delete_sequence_container(){
             $id_campaign = $this->uri->segment(3);
             $id_sequence_container = $this->uri->segment(4);
-
+            
             $this->load->model('Getter');
             $this->Getter->delete_sequence_container($id_sequence_container);
 
@@ -87,15 +87,15 @@ class userCont extends CI_Controller {
         function delete_sequence(){
             $id_campaign = $this->uri->segment(3);
             $id_sequence = $this->uri->segment(4);
-
+            
             $this->load->model('Getter');
             $this->Getter->delete_sequence($id_sequence);
 
             redirect("usercont/mencoba/".$id_campaign);
         }
 
-
-
+        
+        
 
         function edit_campaign(){
             $id = $this->input->post('id');
@@ -131,10 +131,8 @@ class userCont extends CI_Controller {
             $this->db->update('campaigns',$newStat);
             redirect('userCont/dashboardview');
         }
-
-				
         public function toggle_container() {
-
+            
             $id_campaign= $this->uri->segment(3);
             $id_container= $this->uri->segment(4);
             $stat= $this->uri->segment(5);
@@ -166,7 +164,7 @@ class userCont extends CI_Controller {
 
                     $this->db->insert('campaigns', $newcampaign);
                     redirect('userCont/dashboardview');
-
+                    
                 }
 
             }

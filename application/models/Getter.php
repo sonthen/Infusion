@@ -11,28 +11,28 @@ class Getter extends CI_Model{
     }
 
     function get_sequence_container_content($id) {
-
+        
         $query = $this->db->query("SELECT id, sequence_container_name, container_parent_id, lvl, campaign_id, label_id, stat
-        FROM `sequence_container`
+        FROM `sequence_container` 
         WHERE campaign_id = $id"
         );
         return $query->result_array() ;
     }
-    function parent_container_lvl () {
-
-        $query = $this->db->query("SELECT lvl
-        FROM `sequence_container`
-        WHERE id=18"
+    
+    function parent_container_lvl ($id) {
+        if($id == NULL) {
+            $id=0;
+        }
+        $query = $this->db->query("SELECT lvl 
+        FROM `sequence_container` 
+        WHERE id=$id"
         );
-
-
-
 
         return $query->result_array() ;
     }
 
     function get_sequence_content() {
-
+        
         $query = $this->db->query("SELECT id, sequence_name, sequence_type, parent_id, container_id, delay, value_1, value_2, container_id
         FROM `sequences`"
         );
@@ -57,25 +57,25 @@ class Getter extends CI_Model{
     function edit_campaign($id) {
 
         $query = $this->db->query("SELECT id, campaign_name
-        FROM `campaigns`
+        FROM `campaigns` 
         WHERE id = $id"
         );
         return $query->result_array() ;
     }
 
     function delete_campaign($id) {
-
-        $query = $this->db->query("DELETE FROM `campaigns`
+        
+        $query = $this->db->query("DELETE FROM `campaigns` 
                                     WHERE `campaigns`.`id` = $id"
                                     );
     }
 
     function delete_sequence($id) {
-
-        $query = $this->db->query("DELETE FROM `sequences`
+        
+        $query = $this->db->query("DELETE FROM `sequences` 
                                     WHERE `sequences`.`id` = $id"
                                     );
-
+        
     }
 
     function delete_sequence_container($id) {
@@ -86,8 +86,6 @@ class Getter extends CI_Model{
 
     }
 
-
-
-
+    
 
 }
