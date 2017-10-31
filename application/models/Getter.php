@@ -18,6 +18,7 @@ class Getter extends CI_Model{
         );
         return $query->result_array() ;
     }
+    
     function parent_container_lvl ($id) {
         if($id == NULL) {
             $id=0;
@@ -78,11 +79,11 @@ class Getter extends CI_Model{
     }
 
     function delete_sequence_container($id) {
-        
-        $query = $this->db->query("DELETE FROM `sequence_container` 
+
+        $query = $this->db->query("DELETE FROM `sequence_container`
                                     WHERE `sequence_container`.`id` = $id"
                                     );
-        
+
     }
 
     

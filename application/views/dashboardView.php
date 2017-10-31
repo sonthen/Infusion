@@ -14,7 +14,7 @@
 <!-- navbar end -->
 
 <div class="container-fluid">
-  <div class="bkg row">
+  <div class="row">
 
     <div class="col-md-11">
           <div class="row">
@@ -42,14 +42,14 @@
                         <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
                           <button type="button" class="btn btn-default btn-xs btn-off">Off</button>
                         </a>
-                        
+
                           <button type="button" class="btn btn-default btn-xs btn-off" onclick="document.getElementById('modal-delete').style.display='block'">&times</button>
-                     
+
                       </span>
-                      
+
 
                     <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    
+
                     <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
                         <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
                     </a>
