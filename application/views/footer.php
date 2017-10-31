@@ -4,7 +4,7 @@
   <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url('assets/bootstrap/js/jquery-1.9.1.min.js');?>"></script>
   <script src="<?php echo base_url();?>assets/bootstrap/js/apps.min.js"></script>
-  <script>    CKEDITOR.replace( 'editor' );  </script>
+  <!-- <script>    CKEDITOR.replace( 'editor' );  </script> -->
   <!-- ================== END PAGE LEVEL JS ================== -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
   <script>
