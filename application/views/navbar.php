@@ -90,3 +90,10 @@
 
 
   <!-- ================== END PAGE LEVEL JS ================== -->
+
+  <script>
+    $(document).ready(function() {
+      App.init();
+      Dashboard.init();
+    });
+  </script>

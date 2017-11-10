@@ -14,7 +14,7 @@
 <!-- navbar end -->
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="bkg row">
 
     <div class="col-md-11">
           <div class="row">
@@ -25,84 +25,84 @@
           </div>
       </div>
 
-          <?php foreach( $dashboard_content as $e) {?>
-            <div class="col-md-6">
-              <div class="col-md-12">
-                <div class="row">
-                <?php if($e->stat==0){ ?>
-                  <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
-                    <div class="box-label">
-                        <span>SEQ :</span>
-                        <span> 300 </span>
-                        <span class="blue-line"></span>
-                        <span> <?php echo $e->created_at ?> </span>
-                    </div>
+      <?php foreach( $dashboard_content as $e) {?>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="row">
+            <?php if($e->stat==0){ ?>
+              <div class="box1 col-md-offset-1 col-md-9" style="opacity:0.5;">
+                <div class="box-label">
+                    <span>SEQ :</span>
+                    <span> 300 </span>
+                    <span class="blue-line"></span>
+                    <span> <?php echo $e->created_at ?> </span>
+                </div>
 
-                      <span class="btn-indikator">
-                        <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
-                          <button type="button" class="btn btn-default btn-xs btn-off">Off</button>
-                        </a>
-
-                          <button type="button" class="btn btn-default btn-xs btn-off" onclick="document.getElementById('modal-delete').style.display='block'">&times</button>
-
-                      </span>
-
-
-                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-
-                    <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
-                        <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                  <span class="btn-indikator">
+                    <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
+                      <button type="button" class="btn btn-default btn-xs btn-off">Off</button>
                     </a>
-                  </div>
-                  <!-- ##### modal are you sure ##### -->
-                  <div class="w3-container modal1">
-                    <div id="modal-delete" class="w3-modal  w3-animate-opacity">
-                      <div class="w3-modal-content w3-card-4">
-                        <header class="w3-container w3-teal modal-campaign modal1">
-                            <span onclick="document.getElementById('modal-delete').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
-                            <h2>Are You Sure?</h2>
-                        </header>
-                        <div class="w3-container modal1">
-                          <button class="btn-create-campaign btn" name="addEmailCampaign" onclick="document.getElementById('modal-delete').style.display='none'">No</button>
-                          <a href="<?php echo base_url('usercont/delete_campaign/'.$e->id); ?>">
-                            <button class="btn-create-campaign btn" name="addEmailCampaign">Yes</button>
-                          </a>
-                        </div>
-                      </div>
+                    
+                      <button type="button" class="btn btn-default btn-xs btn-off" onclick="document.getElementById('modal-delete').style.display='block'">&times</button>
+                  
+                  </span>
+                  
+
+                <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+                
+                <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
+                    <button type="button" class="btn btn-default btn-xs btn-sequences">Sequences</button>
+                </a>
+              </div>
+              <!-- ##### modal are you sure ##### -->
+              <div class="w3-container modal1">
+                <div id="modal-delete" class="w3-modal  w3-animate-opacity">
+                  <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container w3-teal modal-campaign modal1">
+                        <span onclick="document.getElementById('modal-delete').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+                        <h2>Are You Sure?</h2>
+                    </header>
+                    <div class="w3-container modal1">
+                      <button class="btn-create-campaign btn" name="addEmailCampaign" onclick="document.getElementById('modal-delete').style.display='none'">No</button>
+                      <a href="<?php echo base_url('usercont/delete_campaign/'.$e->id); ?>">
+                        <button class="btn-create-campaign btn" name="addEmailCampaign">Yes</button>
+                      </a>
                     </div>
                   </div>
-                  <!-- ##### akhir modal ###### -->
-
-                 <?php } ?>
-
-                 <!-- ######################### -->
-
-                 <?php if($e->stat==1){ ?>
-                  <div class="box1 col-md-offset-1 col-md-9">
-                    <div class="box-label">
-                        <span>SEQ :</span>
-                        <span> 300 </span>
-                        <span class="blue-line"></span>
-                        <span> <?php echo $e->created_at ?> </span>
-                    </div>
-
-                      <span class="btn-indikator">
-                          <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
-                            <button type="button" class="btn btn-default btn-xs btn-on">On</button>
-                          </a>
-                      </span>
-
-                    <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
-                    <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
-                      <button type="button" class="btn btn-default btn-xs btn-sequences" disabled>Sequences</button>
-                    </a>
-                  </div>
-                 <?php } ?>
-
                 </div>
               </div>
+              <!-- ##### akhir modal ###### -->
+
+              <?php } ?>
+
+              <!-- ######################### -->
+
+              <?php if($e->stat==1){ ?>
+              <div class="box1 col-md-offset-1 col-md-9">
+                <div class="box-label">
+                    <span>SEQ :</span>
+                    <span> 300 </span>
+                    <span class="blue-line"></span>
+                    <span> <?php echo $e->created_at ?> </span>
+                </div>
+
+                  <span class="btn-indikator">
+                      <a href="<?php echo base_url('usercont/toggle_campaign/'.$e->id.'/'.$e->stat); ?>">
+                        <button type="button" class="btn btn-default btn-xs btn-on">On</button>
+                      </a>
+                  </span>
+
+                <p class="title-campaign">  <?php echo $e->campaign_name ?></p>
+                <a href="<?php echo base_url('usercont/mencoba/'.$e->id); ?>">
+                  <button type="button" class="btn btn-default btn-xs btn-sequences" disabled>Sequences</button>
+                </a>
+              </div>
+              <?php } ?>
+
             </div>
-          <?php } ?>
+          </div>
+        </div>
+      <?php } ?>
 
  </div>
 </div>

@@ -14,11 +14,11 @@ class Getter extends CI_Model{
         
         $query = $this->db->query("SELECT id, sequence_container_name, container_parent_id, lvl, campaign_id, label_id, stat
         FROM `sequence_container` 
-        WHERE campaign_id = $id"
+        WHERE campaign_id = $id
+        ORDER BY lvl ASC"
         );
         return $query->result_array() ;
     }
-    
     function parent_container_lvl ($id) {
         if($id == NULL) {
             $id=0;
@@ -31,10 +31,23 @@ class Getter extends CI_Model{
         return $query->result_array() ;
     }
 
+    function parent_sequence_lvl ($id) {
+        if($id == NULL) {
+            $id=0;
+        }
+        $query = $this->db->query("SELECT lvl 
+        FROM `sequences` 
+        WHERE id=$id"
+        );
+
+        return $query->result_array() ;
+    }
+
     function get_sequence_content() {
         
-        $query = $this->db->query("SELECT id, sequence_name, sequence_type, parent_id, container_id, delay, value_1, value_2, container_id
-        FROM `sequences`"
+        $query = $this->db->query("SELECT id, lvl, sequence_name, sequence_type, parent_id, container_id, delay, value_1, value_2, container_id
+        FROM `sequences`
+        ORDER BY lvl ASC"
         );
         return $query->result_array() ;
     }
@@ -63,6 +76,23 @@ class Getter extends CI_Model{
         return $query->result_array() ;
     }
 
+    function get_child_sequence($id) {
+        
+        $query = $this->db->query("select id
+            from sequences
+            where parent_id = '$id'"
+        );
+        return $query->result_array() ;
+    }
+    function get_parent_sequence($id) {
+        
+        $query = $this->db->query("select parent_id
+            from sequences
+            where id = '$id'"
+        );
+        return $query->result_array() ;
+    }
+
     function delete_campaign($id) {
         
         $query = $this->db->query("DELETE FROM `campaigns` 
@@ -75,15 +105,14 @@ class Getter extends CI_Model{
         $query = $this->db->query("DELETE FROM `sequences` 
                                     WHERE `sequences`.`id` = $id"
                                     );
-        
     }
 
     function delete_sequence_container($id) {
-
-        $query = $this->db->query("DELETE FROM `sequence_container`
+        
+        $query = $this->db->query("DELETE FROM `sequence_container` 
                                     WHERE `sequence_container`.`id` = $id"
                                     );
-
+        
     }
 
     

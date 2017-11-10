@@ -42,8 +42,8 @@
                                     </select>
                                     <select class="form-control text-seq-select" name="container_parent" id="container_parent">
                                         <option value="">Select Parent Container</option>
-                                        <?php foreach( $sequence_container as $seq_cont) { ?>
-                                            <option value="<?php echo $seq_cont['id'] ?>"><?php echo $seq_cont['sequence_container_name'] ?></option>
+                                        <?php foreach( $sequence_container as $s_cont) { ?>
+                                            <option value="<?php echo $s_cont['id'] ?>"><?php echo $s_cont['sequence_container_name'] ?></option>
                                         <?php } ?>
                                     </select>
                                     <button class="btn btn-default btn-seq-besar-create">Create</button>
@@ -70,33 +70,37 @@
                                     <h3><?php echo $seq_cont["sequence_container_name"]; ?></h3>
                                 </div>
                                 <div class="box-seq-status col-md-7" data-pg-collapsed>
-                                    <?php if( $seq_cont["stat"]== 1) { ?>
-                                        <a href="<?php echo base_url('usercont/toggle_container/'.$this->uri->segment(3).'/'.$seq_cont["id"].'/'.$seq_cont["stat"]); ?>">
-                                            <button type="button" class="btn btn-default btn-seq-on">On</button>
-                                        </a>
-                                    <?php } else {?>
-                                        <a href="<?php echo base_url('usercont/toggle_container/'.$this->uri->segment(3).'/'.$seq_cont["id"].'/'.$seq_cont["stat"]); ?>">
-                                        <button type="button" class="btn btn-default btn-seq-off">Off</button>
-                                        </a>
-                                    <?php } ?>
-                                    
-                                    <!-- button munculin sequence kecil -->
-                                    <button id="btn-plus" onclick="document.getElementById('<?php echo  $seq_cont["id"]; ?>').style.display='block'" type="button" class="btn btn-default plus-button">+</button>
-                                    
-                                    <select class="form-control text-seq-select" name="label" id="label">
-                                        <?php foreach( $label_content as $label) { ?>
-                                            <option <?php if($label->id == $seq_cont["label_id"]){ echo 'selected="$seq_cont["label_id"]"'; } ?> value="<?php echo $label->id ?>"><?php echo $label->label_name ?></option>
+                                    <?php echo form_open('usercont/edit_sequence_container/'.$this->uri->segment(3).'/'.$seq_cont["id"]); ?>
+                                    <?php echo form_hidden('sequence_container_name', $seq_cont["sequence_container_name"]); ?>
+                                        <?php if( $seq_cont["stat"]== 1) { ?>
+                                            <a href="<?php echo base_url('usercont/toggle_container/'.$this->uri->segment(3).'/'.$seq_cont["id"].'/'.$seq_cont["stat"]); ?>">
+                                                <button type="button" class="btn btn-default btn-seq-on">On</button>
+                                            </a>
+                                        <?php } else {?>
+                                            <a href="<?php echo base_url('usercont/toggle_container/'.$this->uri->segment(3).'/'.$seq_cont["id"].'/'.$seq_cont["stat"]); ?>">
+                                            <button type="button" class="btn btn-default btn-seq-off">Off</button>
+                                            </a>
                                         <?php } ?>
-                                    </select>
-                                    <select class="form-control text-seq-select">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option value="value">Name</option>
-                                    </select>
-                                    <h3 class="text-seq-stage"><?php echo  $seq_cont["lvl"]; ?></h3>
-                                    <button type="button" class="btn btn-default btn-seq-besar-create">Update</button>
-                                    
+                                        
+                                        <!-- button munculin sequence kecil -->
+                                        <button id="btn-plus" onclick="document.getElementById('<?php echo  $seq_cont["id"]; ?>').style.display='block'" type="button" class="btn btn-default plus-button">+</button>
+                                        
+                                        <select class="form-control text-seq-select" name="label" id="label">
+                                            <?php foreach( $label_content as $label) { ?>
+                                                <option <?php if($label->id == $seq_cont["label_id"]){ echo 'selected'; } ?> value="<?php echo $label->id ?>"><?php echo $label->label_name ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <select class="form-control text-seq-select" name="container_parent" id="container_parent">
+                                            <option value="">Select Parent Container</option>
+                                            <?php foreach($sequence_container as $s_cont) { ?>
+                                                <?php if($s_cont["id"] != $seq_cont["id"]) { ?>
+                                                    <option <?php if($seq_cont["container_parent_id"] == $s_cont["id"]){ echo 'selected'; } ?> value="<?php echo $s_cont['id'] ?>"><?php echo $s_cont['sequence_container_name'] ?></option>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </select>
+                                        <h3 class="text-seq-stage"><?php echo  "Level: ".$seq_cont["lvl"]; ?></h3>
+                                        <button class="btn btn-default btn-seq-besar-create">Update</button>
+                                    <?php echo form_close(); ?>
                                 </div>
                                 <div class="box-seq-status col-md-2">
                                     <a href="<?php echo base_url('usercont/addEmailCampaign'); ?>">
@@ -118,7 +122,12 @@
                                 
                                         <input value='<?php echo set_value('sequence_name')?>'type="text" placeholder="Sequence Name" class="form-control" name="sequence_name" id="sequence_name">
                                         <p class="text-seq-delay">Parent</p>
-                                        <input value='<?php echo set_value('parent_id')?>'type="number" class="form-control" name="parent_id" id="parent_id">
+                                        <select class="form-control" name="sequence_parent" id="sequence_parent">
+                                            <option value="">Select Parent Sequence</option>
+                                            <?php foreach( $sequence_content as $s_seq) { ?>
+                                                <option value="<?php echo $s_seq['id'] ?>"><?php echo $s_seq['sequence_name'] ?></option>
+                                            <?php } ?>
+                                        </select>
                                         <p class="text-seq-delay">Delay</p>
                                         <input value='<?php echo set_value('delay')?>'type="number" class="form-control" name="delay" id="delay">
                                         <p class="text-seq-subject">Subject</p>
@@ -145,12 +154,24 @@
                                                     </a>
                                                 <?php } ?>
                                                 <h3 class="text-nama-seq"><?php echo $seq["sequence_name"] ?></h3>
+                                                <p>Order Number: <?php echo $seq["lvl"]; ?> </p>
                                                 <p class="text-seq-delay">Parent</p>
-                                                <?php echo form_input(['name'=>'parent_id','value'=>$seq["parent_id"], 'type' => 'number','placeholder'=>'Parent ID', 'class' => 'form-control']); ?>
+                                                <select class="form-control" name="sequence_parent" id="sequence_parent">
+                                                    <option value="">Select Parent Sequence</option>
+                                                    <?php foreach( $sequence_content as $s_seq) { ?>
+                                                        <?php if( $s_seq["container_id"]== $seq_cont["id"] && $s_seq["id"]!=$seq["id"]) { ?>
+                                                            <option <?php if($seq["parent_id"] == $s_seq["id"]){ echo 'selected'; } ?> value="<?php echo $s_seq['id'] ?>"><?php echo $s_seq['sequence_name'] ?></option>
+                                                        <?php } ?>
+                                                    <?php } ?>
+                                                </select>
                                                 <p class="text-seq-delay">Delay</p>
                                                 <?php echo form_input(['name'=>'delay','value'=>$seq["delay"], 'type' => 'number','placeholder'=>'Delay (in day)', 'class' => 'form-control']); ?>
-                                                <p class="text-seq-subject">Subject</p>
-                                                <?php echo form_input(['name'=>'value_1','value'=>$seq["value_1"], 'type' => 'text','placeholder'=>'Subject', 'class' => 'form-control']); ?>
+                                                
+                                                <!-- sembunyikan "subject" jika tipe sequence = SMS -->
+                                                <?php if( $seq["sequence_type"]== 0) { ?>
+                                                    <p class="text-seq-subject">Subject</p>
+                                                    <?php echo form_input(['name'=>'value_1','value'=>$seq["value_1"], 'type' => 'text','placeholder'=>'Subject', 'class' => 'form-control']); ?>
+                                                <?php } ?>
                                                 <p class="text-seq-body">Body</p>
                                                 <textarea  id="editor" style="min-height:214px;" type="text" class="form-control" name="value_2"><?php echo $seq['value_2']; ?></textarea>
                                     
@@ -167,10 +188,32 @@
                     <?php } ?> <!-- akhir FOREACH besar -->
 
 
+    <!-- ################### modal ##################### -->
+                    <div class="w3-container modal1">
+                        <div id="id01" class="w3-modal  w3-animate-opacity">
+                            <div class="w3-modal-content w3-card-4">
+                                <header class="w3-container w3-teal modal-campaign modal1">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large w3-display-topright w3-xbtn">&times;</span>
+                                    <h2>Create Campaign</h2>
+                                    <?php echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
+                                </header>
+                                <div class="w3-container modal1">
+                                    <p class="modal-text">Title Campaign</p>
+                                    <input value='<?php echo set_value('campaign_name')?>' type="text" class="form-control" name="campaign_name" id="campaign_name">
+
+                                    <a href="<?php echo base_url('usercont/addEmailCampaign'); ?>">
+                                    <button class="btn-create-campaign btn" name="addEmailCampaign">Create</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    <!-- ################### akhir modal ##################### -->
+                     
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <?php $this->load->view('footer'); ?>

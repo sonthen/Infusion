@@ -1,9 +1,3 @@
-.bkg {
-    background: #DAEBEE;
-
-    width:100%
-}
-
 .box1
 {
     border: 1px solid transparent;
@@ -33,7 +27,7 @@
 
 .title-campaign
 {
-    border: 2px solid #FF5126;
+    border: 2px solid rgba(255, 168, 114, 0.66);
     border-radius: 6px;
     text-align: center;
     font-weight: bolder;
@@ -42,7 +36,6 @@
     margin-right: auto;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
-    color: #333;
 }
 
 /*.btn-edit
@@ -65,28 +58,25 @@
     width: 30%;
     border-radius: 6px;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
-    background-color: #FF5126;
+    background-color: rgba(248, 133, 18, 0.68);
     border: 1px solid transparent;
     color: #ffffff;
     font-size: 14px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    text-decoration: none!important;
 }
 
-.btn-sequences:hover{
-  background-color: #FF5126;
-  color: #fff!important;
-  text-decoration: none!important;
-}
+.bkg {
+background: #fcdfa6;
+background: -moz-linear-gradient(left,  #fcdfa6 0%, #ffbe7d 50%, #ffb168 100%);
+background: -webkit-linear-gradient(left,  #fcdfa6 0%,#ffbe7d 50%,#ffb168 100%);
+background: linear-gradient(to right,  #fcdfa6 0%,#ffbe7d 50%,#ffb168 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcdfa6', endColorstr='#ffb168',GradientType=1 );
 
-.btn[disabled] {
-  background-color: #FF5126!important;
-  color: #fff!important;
-  text-decoration: none!important;
-}
+    width:100%
 
+}
 
 .btn-indikator
 {
@@ -120,7 +110,6 @@
     text-align: center;
     margin: 30px auto 20px;
     font-size: 12px;
-    color: #333;
 }
 
 .blue-line
@@ -148,8 +137,8 @@
 .sms-text
 {
     font-size: 30px;
-    color: #FF5126;
-    font-weight: 600;
+    color: #ffffff;
+    font-weight: 500;
     text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
     margin-top: 8px;
 }
@@ -170,19 +159,19 @@
     position: relative;
     bottom: 40px;
     box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.25);
-    color: #FF5126;
+    color: rgba(251, 132, 13, 0.66);
     background-color: #fdf7f7;
 }
 
 .btn-plus:hover
 {
-    background-color: #FF5126!important;
+    background-color: rgba(251, 132, 13, 0.66)!important;
     color: #fff!important;
 }
 
 .btn-plus2:hover
 {
-    background-color: #FF5126!important;
+    background-color: rgba(251, 132, 13, 0.66)!important;
     color: #fff!important;
 }
 
